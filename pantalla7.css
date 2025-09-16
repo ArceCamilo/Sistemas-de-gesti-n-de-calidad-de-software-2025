@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%);
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.methodology-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.methodology-card.selected {
+    border-color: #3b82f6;
+    background: linear-gradient(145deg, #eff6ff 0%, #dbeafe 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.25);
+}
+
+.methodology-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.comparison-table {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+}
+
+.survey-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.survey-option {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.survey-option:hover {
+    background: #f3f4f6;
+    transform: translateX(5px);
+}
+
+.survey-option.selected {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    transform: translateX(5px);
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    transition: width 0.5s ease;
+}
+
+.result-card {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    animation: slideInUp 0.8s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.floating-element {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.tab-button {
+    transition: all 0.3s ease;
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.25);
+}
+
+.comparison-highlight {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    animation: highlight 0.5s ease;
+}
+
+@keyframes highlight {
+    0% {
+        background: #ffffff;
+    }
+    50% {
+        background: #fef3c7;
+    }
+    100% {
+        background: #fef3c7;
+    }
+}
+
+.methodology-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 2px;
+}
+
+.badge-iso {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.badge-lean {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.badge-six-sigma {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge-kaizen {
+    background: #fce7f3;
+    color: #be185d;
+}
+
+.badge-tqm {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.badge-pdca {
+    background: #fed7d7;
+    color: #c53030;
+}
+
+.recommendation-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.step-indicator {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.step-indicator.active {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    transform: scale(1.1);
+}
+
+.step-indicator.completed {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}

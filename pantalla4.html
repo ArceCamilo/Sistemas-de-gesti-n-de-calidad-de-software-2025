@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodologías en Detalle - Sistemas de gestión de calidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="pantalla4.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navegación -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="#" onclick="goToHome()" class="text-2xl font-bold text-gray-800 cursor-pointer">🌟 Sistemas de gestión de calidad</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="pantalla1.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
+                        <a href="pantalla2.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Gestión de Calidad</a>
+                        <a href="pantalla3.html" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Procesos</a>
+                        <a href="pantalla4.html" class="bg-green-600 text-white px-3 py-2 rounded-md text-sm font-medium">Metodologías</a>
+                        <a href="pantalla5.html" class="text-gray-600 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Recursos</a>
+                        <a href="pantalla6.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Nosotros</a>
+                        <a href="pantalla7.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Herramientas</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-green-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" onclick="goToHome()" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#gestion-calidad" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Gestión de Calidad</a>
+                <a href="#procesos" class="text-gray-600 hover:text-orange-600 block px-3 py-2 rounded-md text-base font-medium">Procesos</a>
+                <a href="#metodologias" class="bg-green-600 text-white block px-3 py-2 rounded-md text-base font-medium">Metodologías</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="metodologias" class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <div class="text-6xl mb-6">🚀</div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Metodologías en Detalle
+                </h1>
+                <div class="content-placeholder h-6 w-96 mx-auto mb-8"></div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="scrollToSection('scrum-detalle')" class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+                        Explorar Scrum
+                    </button>
+                    <button onclick="scrollToSection('kanban-detalle')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors">
+                        Ver Kanban
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Scrum en Detalle -->
+    <section id="scrum-detalle" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-6">🏉</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Scrum en Detalle</h2>
+                <div class="content-placeholder h-4 w-80 mx-auto"></div>
+            </div>
+
+            <!-- Introducción a Scrum -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-green-800 mb-6 text-center">¿Qué es Scrum?</h3>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="space-y-4">
+                                <div class="content-placeholder h-4 w-full"></div>
+                                <div class="content-placeholder h-4 w-5/6"></div>
+                                <div class="content-placeholder h-4 w-4/5"></div>
+                                <div class="content-placeholder h-4 w-full"></div>
+                                <div class="content-placeholder h-4 w-3/4"></div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg p-8">
+                            <div class="content-placeholder h-48 w-full"></div>
+                            <p class="text-gray-500 mt-4 text-center">Espacio para diagrama general de Scrum</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roles de Scrum -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl border-l-4 border-green-500">
+                    <h3 class="text-2xl font-bold text-green-800 mb-8 text-center">👥 Roles en Scrum</h3>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Product Owner -->
+                        <div class="bg-blue-50 p-6 rounded-lg card-hover">
+                            <div class="text-center mb-4">
+                                <div class="text-4xl mb-2">👨‍💼</div>
+                                <h4 class="text-xl font-bold text-blue-800">Product Owner</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div>
+                                    <h5 class="font-semibold text-blue-700 mb-2">Responsabilidades:</h5>
+                                    <div class="space-y-2">
+                                        <div class="content-placeholder h-3 w-full"></div>
+                                        <div class="content-placeholder h-3 w-4/5"></div>
+                                        <div class="content-placeholder h-3 w-5/6"></div>
+                                        <div class="content-placeholder h-3 w-3/4"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-blue-700 mb-2">Habilidades clave:</h5>
+                                    <div class="space-y-2">
+                                        <div class="content-placeholder h-3 w-full"></div>
+                                        <div class="content-placeholder h-3 w-4/5"></div>
+                                        <div class="content-placeholder h-3 w-5/6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Scrum Master -->
+                        <div class="bg-green-50 p-6 rounded-lg card-hover">
+                            <div class="text-center mb-4">
+                                <div class="text-4xl mb-2">🎯</div>
+                                <h4 class="text-xl font-bold text-green-800">Scrum Master</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div>
+                                    <h5 class="font-semibold text-green-700 mb-2">Responsabilidades:</h5>
+                                    <div class="space-y-2">
+                                        <div class="content-placeholder h-3 w-full"></div>
+                                        <div class="content-placeholder h-3 w-4/5"></div>
+                                        <div class="content-placeholder h-3 w-5/6"></div>
+                                        <div class="content-placeholder h-3 w-3/4"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-green-700 mb-2">Habilidades clave:</h5>
+                                    <div class="space-y-2">
+                                        <div class="content-placeholder h-3 w-full"></div>
+                                        <div class="content-placeholder h-3 w-4/5"></div>
+                                        <div class="content-placeholder h-3 w-5/6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Development Team -->
+                        <div class="bg-orange-50 p-6 rounded-lg card-hover">
+                            <div class="text-center mb-4">
+                                <div class="text-4xl mb-2">👨‍💻</div>
+                                <h4 class="text-xl font-bold text-orange-800">Development Team</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div>
+                                    <h5 class="font-semibold text-orange-700 mb-2">Responsabilidades:</h5>
+                                    <div class="space-y-2">
+                                        <div class="content-placeholder h-3 w-full"></div>
+                                        <div class="content-placeholder h-3 w-4/5"></div>
+                                        <div class="content-placeholder h-3 w-5/6"></div>
+                                        <div class="content-placeholder h-3 w-3/4"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-orange-700 mb-2">Características:</h5>
+                                    <div class="space-y-2">
+                                        <div class="content-placeholder h-3 w-full"></div>
+                                        <div class="content-placeholder h-3 w-4/5"></div>
+                                        <div class="content-placeholder h-3 w-5/6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sprints -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl border-l-4 border-purple-500">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-8 text-center">🔄 Sprints</h3>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold text-purple-700 mb-4">Concepto y Duración</h4>
+                            <div class="space-y-3">
+                                <div class="content-placeholder h-4 w-full"></div>
+                                <div class="content-placeholder h-4 w-5/6"></div>
+                                <div class="content-placeholder h-4 w-4/5"></div>
+                                <div class="content-placeholder h-4 w-full"></div>
+                            </div>
+
+                            <h4 class="text-xl font-semibold text-purple-700 mb-4 mt-6">Características del Sprint</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                                <div class="content-placeholder h-3 w-full"></div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg p-6">
+                            <div class="content-placeholder h-56 w-full"></div>
+                            <p class="text-gray-500 mt-4 text-center">Espacio para diagrama del ciclo de Sprint</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Backlog -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-8 text-center">📋 Product Backlog</h3>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-100 rounded-lg p-6">
+                            <div class="content-placeholder h-64 w-full"></div>
+                            <p class="text-gray-500 mt-4 text-center">Espacio para ejemplo de Product Backlog</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-indigo-700 mb-4">¿Qué es el Product Backlog?</h4>
+                            <div class="space-y-3 mb-6">
+                                <div class="content-placeholder h-4 w-full"></div>
+                                <div class="content-placeholder h-4 w-5/6"></div>
+                                <div class="content-placeholder h-4 w-4/5"></div>
+                            </div>
+
+                            <h4 class="text-xl font-semibold text-indigo-700 mb-4">Características</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                            </div>
+
+                            <h4 class="text-xl font-semibold text-indigo-700 mb-4 mt-6">Gestión del Backlog</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Meetings -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl border-l-4 border-yellow-500">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-8 text-center">☀️ Daily Scrum Meetings</h3>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-yellow-50 p-6 rounded-lg">
+                            <h4 class="text-lg font-semibold text-yellow-800 mb-4">🎯 Propósito</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-50 p-6 rounded-lg">
+                            <h4 class="text-lg font-semibold text-yellow-800 mb-4">⏰ Formato</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-50 p-6 rounded-lg">
+                            <h4 class="text-lg font-semibold text-yellow-800 mb-4">📝 Las 3 Preguntas</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-gray-100 rounded-lg p-6">
+                        <div class="content-placeholder h-32 w-full"></div>
+                        <p class="text-gray-500 mt-4 text-center">Espacio para ejemplo de Daily Scrum</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sprint Review -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-800 mb-8 text-center">🔍 Sprint Review</h3>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold text-pink-700 mb-4">Objetivos del Sprint Review</h4>
+                            <div class="space-y-3 mb-6">
+                                <div class="content-placeholder h-4 w-full"></div>
+                                <div class="content-placeholder h-4 w-5/6"></div>
+                                <div class="content-placeholder h-4 w-4/5"></div>
+                                <div class="content-placeholder h-4 w-full"></div>
+                            </div>
+
+                            <h4 class="text-xl font-semibold text-pink-700 mb-4">Participantes</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-pink-700 mb-4">Agenda Típica</h4>
+                            <div class="space-y-2 mb-6">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                                <div class="content-placeholder h-3 w-full"></div>
+                            </div>
+
+                            <div class="bg-gray-100 rounded-lg p-4">
+                                <div class="content-placeholder h-24 w-full"></div>
+                                <p class="text-gray-500 mt-2 text-center text-sm">Ejemplo de agenda</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sprint Retrospective -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl border-l-4 border-red-500">
+                    <h3 class="text-2xl font-bold text-red-800 mb-8 text-center">🔄 Sprint Retrospective</h3>
+
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-700 mb-4">¿Qué es la Retrospectiva?</h4>
+                            <div class="space-y-3 mb-6">
+                                <div class="content-placeholder h-4 w-full"></div>
+                                <div class="content-placeholder h-4 w-5/6"></div>
+                                <div class="content-placeholder h-4 w-4/5"></div>
+                            </div>
+
+                            <h4 class="text-xl font-semibold text-red-700 mb-4">Beneficios</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg p-6">
+                            <div class="content-placeholder h-48 w-full"></div>
+                            <p class="text-gray-500 mt-4 text-center">Espacio para técnicas de retrospectiva</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-red-800 mb-3">🟢 Start (Empezar)</h5>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-red-800 mb-3">🔴 Stop (Parar)</h5>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-red-800 mb-3">🔄 Continue (Continuar)</h5>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Kanban en Detalle -->
+    <section id="kanban-detalle" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-6">📋</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Kanban como Herramienta de Gestión</h2>
+                <div class="content-placeholder h-4 w-80 mx-auto"></div>
+            </div>
+
+            <!-- Introducción a Kanban -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-6 text-center">¿Qué es Kanban?</h3>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="space-y-4">
+                                <div class="content-placeholder h-4 w-full"></div>
+                                <div class="content-placeholder h-4 w-5/6"></div>
+                                <div class="content-placeholder h-4 w-4/5"></div>
+                                <div class="content-placeholder h-4 w-full"></div>
+                                <div class="content-placeholder h-4 w-3/4"></div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg p-8">
+                            <div class="content-placeholder h-48 w-full"></div>
+                            <p class="text-gray-500 mt-4 text-center">Espacio para tablero Kanban básico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Principios de Kanban -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-8 text-center">🎯 Principios Fundamentales</h3>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-blue-50 p-6 rounded-lg card-hover text-center">
+                            <div class="text-3xl mb-3">👁️</div>
+                            <h4 class="text-lg font-bold text-blue-800 mb-3">Visualizar el Trabajo</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 p-6 rounded-lg card-hover text-center">
+                            <div class="text-3xl mb-3">🚫</div>
+                            <h4 class="text-lg font-bold text-blue-800 mb-3">Limitar WIP</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 p-6 rounded-lg card-hover text-center">
+                            <div class="text-3xl mb-3">🌊</div>
+                            <h4 class="text-lg font-bold text-blue-800 mb-3">Gestionar el Flujo</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 p-6 rounded-lg card-hover text-center">
+                            <div class="text-3xl mb-3">📏</div>
+                            <h4 class="text-lg font-bold text-blue-800 mb-3">Políticas Explícitas</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tablero Kanban -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl border-l-4 border-cyan-500">
+                    <h3 class="text-2xl font-bold text-cyan-800 mb-8 text-center">📊 El Tablero Kanban</h3>
+
+                    <div class="mb-8 bg-gray-100 rounded-lg p-8">
+                        <div class="content-placeholder h-64 w-full"></div>
+                        <p class="text-gray-500 mt-4 text-center">Espacio para tablero Kanban interactivo</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold text-cyan-700 mb-4">Componentes del Tablero</h4>
+                            <div class="space-y-3">
+                                <div class="content-placeholder h-4 w-full"></div>
+                                <div class="content-placeholder h-4 w-5/6"></div>
+                                <div class="content-placeholder h-4 w-4/5"></div>
+                                <div class="content-placeholder h-4 w-full"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-cyan-700 mb-4">Configuración Típica</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Métricas y Análisis -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl border-l-4 border-purple-500">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-8 text-center">📈 Métricas y Análisis</h3>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                        <div class="bg-purple-50 p-4 rounded-lg text-center">
+                            <h4 class="font-semibold text-purple-800 mb-2">⏱️ Lead Time</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-50 p-4 rounded-lg text-center">
+                            <h4 class="font-semibold text-purple-800 mb-2">🔄 Cycle Time</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-50 p-4 rounded-lg text-center">
+                            <h4 class="font-semibold text-purple-800 mb-2">📊 Throughput</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-50 p-4 rounded-lg text-center">
+                            <h4 class="font-semibold text-purple-800 mb-2">🚧 WIP</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <div class="content-placeholder h-48 w-full"></div>
+                        <p class="text-gray-500 mt-4 text-center">Espacio para gráficos de métricas</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implementación de Kanban -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl border-l-4 border-green-500">
+                    <h3 class="text-2xl font-bold text-green-800 mb-8 text-center">🚀 Implementación de Kanban</h3>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold text-green-700 mb-4">Pasos para Implementar</h4>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                                    <div class="content-placeholder h-3 w-full"></div>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                                    <div class="content-placeholder h-3 w-full"></div>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                                    <div class="content-placeholder h-3 w-full"></div>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">4</div>
+                                    <div class="content-placeholder h-3 w-full"></div>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">5</div>
+                                    <div class="content-placeholder h-3 w-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-green-700 mb-4">Mejores Prácticas</h4>
+                            <div class="space-y-2 mb-6">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                                <div class="content-placeholder h-3 w-full"></div>
+                            </div>
+
+                            <h4 class="text-xl font-semibold text-green-700 mb-4">Errores Comunes</h4>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Navegación -->
+    <section class="py-16 bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Listo para aplicar estas metodologías?</h2>
+            <div class="content-placeholder h-6 w-80 mx-auto mb-8"></div>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="goToHome()" class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Volver al Inicio
+                </button>
+                <button onclick="alert('Próximamente: Herramientas y Casos de Estudio')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors">
+                    Siguiente Sección
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🌟 Sistemas de gestión de calidad</h3>
+                    <div class="content-placeholder h-4 w-full mb-2"></div>
+                    <div class="content-placeholder h-4 w-3/4"></div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Metodologías</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#scrum-detalle" class="hover:text-white transition-colors">Scrum Detallado</a></li>
+                        <li><a href="#kanban-detalle" class="hover:text-white transition-colors">Kanban Gestión</a></li>
+                        <li>Roles y Responsabilidades</li>
+                        <li>Ceremonias Ágiles</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Guías de Implementación</li>
+                        <li>Plantillas</li>
+                        <li>Métricas y KPIs</li>
+                        <li>Mejores Prácticas</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <div class="content-placeholder h-3 w-full"></div>
+                        <div class="content-placeholder h-3 w-4/5"></div>
+                        <div class="content-placeholder h-3 w-3/4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Sistemas de gestión de calidad. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad del menú móvil
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Función para scroll suave a secciones
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+
+            // Cerrar menú móvil si está abierto
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        // Función para volver al inicio
+        function goToHome() {
+            alert('Navegando de vuelta a la página de inicio...');
+            // Aquí podrías implementar la navegación real entre páginas
+        }
+
+        // Navegación suave para enlaces del menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+
+        // Efecto de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animaciones
+        document.querySelectorAll('.card-hover').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Observar secciones principales
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <script>
+        (function() {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.innerHTML = "window.__CF$cv$params={r:'978729df6789d786',t:'MTc1Njc1NDgzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

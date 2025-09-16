@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de la Calidad del Software - Sistemas de gestión de calidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="pantalla2.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navegación -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="#" onclick="goToHome()" class="text-2xl font-bold text-gray-800 cursor-pointer">🌟 Sistemas de gestión de calidad</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                <a href="pantalla1.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
+                <a href="pantalla2.html" class="bg-blue-600 text-white block px-3 py-2 rounded-md text-base font-medium">Gestión de Calidad</a>
+                <a href="pantalla3.html" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Procesos</a>
+                <a href="pantalla4.html" class="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Metodologías</a>
+                <a href="pantalla5.html" class="text-gray-600 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Recursos</a>
+                <a href="pantalla6.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Nosotros</a>
+                <a href="pantalla7.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Herramientas</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" onclick="goToHome()" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#gestion-calidad" class="bg-blue-600 text-white block px-3 py-2 rounded-md text-base font-medium">Gestión de Calidad</a>
+                <a href="#procesos" class="text-gray-600 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Procesos</a>
+                <a href="#metodologias" class="text-gray-600 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Metodologías</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="gestion-calidad" class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <div class="text-6xl mb-6">⚙️</div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Gestión de la Calidad del Software
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto">
+                    Descubre los principios fundamentales, técnicas avanzadas y herramientas esenciales para asegurar la calidad en cada etapa del desarrollo de software.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="scrollToSection('fundamentos')" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                        Explorar Fundamentos
+                    </button>
+                    <button onclick="scrollToSection('tecnicas')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                        Ver Técnicas
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Fundamentos -->
+    <section id="fundamentos" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-6">📚</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Fundamentos</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    La calidad del software es un concepto amplio que integra tanto la conformidad técnica como la satisfacción de las expectativas del usuario.
+                </p>
+            </div>
+
+            <div class="section-card card-hover p-12 rounded-xl border-l-4 border-blue-500 text-center">
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">Conceptos Clave de Calidad</h3>
+                <div class="mt-8 bg-blue-50 p-6 rounded-lg">
+                    <ul class="list-disc list-inside text-gray-600 text-lg">
+                        <li>
+                            <strong>Control de calidad:</strong> Se centra en la inspección o muestreo de productos para evitar que los defectuosos lleguen al cliente. Sin embargo, no elimina la aparición de errores y suele ser responsabilidad exclusiva del departamento de calidad.
+                        </li>
+                        <li>
+                            <strong>Aseguramiento de la calidad:</strong> Basado en normas ISO 9000, responde a exigencias de clientes o a la búsqueda de certificación. Se elabora un manual de calidad y procedimientos, pero la participación del personal fuera del área de calidad es baja.
+                        </li>
+                        <li>
+                            <strong>Calidad Total (TQM):</strong> Supone un cambio cultural donde la calidad es responsabilidad de todos. Incluye calidad en producto, servicio, gestión y vida. Se incorpora la idea de cliente interno y externo, así como la colaboración con proveedores. El personal asume un rol activo en el control.
+                        </li>
+                        <li>
+                            <strong>Modelos de Excelencia:</strong> Son adaptaciones de la Calidad Total a Occidente. Destacan el modelo Baldrige (EE. UU.) y el modelo EFQM (Europa), que complementan las normas ISO 9000, poniendo énfasis en las relaciones con clientes y en los resultados globales de la empresa.
+                        </li>
+                    </ul>
+                </div>
+                </p>
+                <div class="mt-8 bg-blue-50 p-6 rounded-lg">
+                    <h1 class="text-blue-700 font-medium">Métricas de Calidad</h1>
+                    <p>Las métricas de calidad son herramientas fundamentales para evaluar y mejorar la calidad del software. Algunas de las métricas más comunes incluyen:</p>
+                    <ul class="list-disc list-inside mt-2 text-gray-600">
+                        <li><strong>Densidad de Defectos:</strong> Número de defectos encontrados por cada 1000 líneas de código.</li>
+                        <li><strong>Tiempo de Respuesta:</strong> Tiempo promedio que tarda el sistema en responder a una solicitud.</li>
+                        <li><strong>Porcentaje de Cobertura de Pruebas:</strong> Porcentaje de código que está cubierto por pruebas automatizadas.</li>
+                        <li><strong>Satisfacción del Cliente:</strong> Medida de cuán satisfechos están los usuarios con el software.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Técnicas de Aseguramiento -->
+    <section id="tecnicas" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-6">🔧</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-orange-800 mb-4">Técnicas de Aseguramiento de la Calidad</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Conoce las técnicas esenciales para asegurar la calidad del software
+                </p>
+            </div>
+
+            <div class="section-card card-hover p-12 rounded-xl border-l-4 border-orange-500 text-center">
+                <h3 class="text-2xl font-bold text-orange-800 mb-6">Técnicas y Metodologías</h3>
+                <div class="mt-8 bg-orange-50 p-6 rounded-lg">
+                    <p class="text-gray-600 text-lg">
+                        El aseguramiento de la calidad del software implica la aplicación de técnicas y metodologías sistemáticas para garantizar que los productos y procesos cumplan con los estándares establecidos y satisfagan las expectativas del cliente. A continuación, se describen algunas de las principales técnicas y metodologías utilizadas:
+                    </p>
+                    <ul class="list-disc list-inside text-left text-gray-600 text-lg mt-6 space-y-2">
+                        <li>
+                            <strong>Revisiones y auditorías:</strong> Incluyen inspecciones, revisiones por pares y auditorías técnicas para detectar defectos en etapas tempranas del desarrollo, mejorando la calidad antes de la entrega.
+                        </li>
+                        <li>
+                            <strong>Pruebas de software:</strong> Consisten en la ejecución de casos de prueba para identificar errores y verificar que el software funcione según lo esperado. Incluyen pruebas unitarias, de integración, de sistema y de aceptación.
+                        </li>
+                        <li>
+                            <strong>Integración continua y entrega continua (CI/CD):</strong> Automatizan la construcción, prueba y despliegue del software, permitiendo detectar problemas rápidamente y mantener un alto nivel de calidad en cada iteración.
+                        </li>
+                        <li>
+                            <strong>Modelos de calidad:</strong> Metodologías como CMMI (Capability Maturity Model Integration) e ISO 9001 proporcionan marcos estructurados para la mejora continua de procesos y la gestión de la calidad.
+                        </li>
+                        <li>
+                            <strong>Métricas y análisis:</strong> El uso de métricas de calidad, como la densidad de defectos o la cobertura de pruebas, permite monitorear y mejorar los procesos y productos de software de manera objetiva.
+                        </li>
+                        <li>
+                            <strong>Gestión de la configuración:</strong> Controla y documenta los cambios en el software, asegurando la integridad y trazabilidad de los productos a lo largo del ciclo de vida.
+                        </li>
+                        <li>
+                            <strong>Metodologías ágiles:</strong> Prácticas como Scrum y Kanban promueven la colaboración, la entrega incremental y la mejora continua, integrando la calidad en cada etapa del desarrollo.
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-8 bg-orange-50 p-6 rounded-lg">
+                    <p class="text-orange-700 font-medium">La implementación efectiva de estas técnicas requiere una cultura organizacional orientada a la mejora continua y la colaboración entre equipos. La capacitación constante, la documentación clara y el uso de herramientas adecuadas son factores clave para lograr altos estándares de calidad en el desarrollo de software.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Herramientas de Calidad -->
+    <section id="herramientas" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-6">🛠️</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Herramientas de Calidad</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Introducción a herramientas esenciales para la gestión de calidad del software
+                </p>
+            </div>
+
+            <div class="section-card card-hover p-12 rounded-xl border-l-4 border-green-500 text-center">
+                <h3 class="text-2xl font-bold text-green-800 mb-6">Herramientas y Tecnologías</h3>
+                <div class="mt-8 bg-green-50 p-6 rounded-lg">
+                    <p class="text-gray-600 text-lg">
+                        Las herramientas de calidad del software son fundamentales para apoyar la gestión, el control y la mejora continua en los procesos de desarrollo. Estas herramientas permiten identificar, analizar y prevenir defectos, así como optimizar la eficiencia y la colaboración entre equipos. A continuación, se describen algunas de las principales herramientas y tecnologías utilizadas en la gestión de la calidad del software:
+                    </p>
+                    <ul class="list-disc list-inside text-left text-gray-600 text-lg mt-6 space-y-2">
+                        <li>
+                            <strong>Herramientas de gestión de pruebas:</strong> Plataformas como <span class="font-semibold">JUnit</span>, <span class="font-semibold">Selenium</span> y <span class="font-semibold">TestRail</span> facilitan la automatización, ejecución y seguimiento de pruebas, asegurando la cobertura y la trazabilidad de los casos de prueba.
+                        </li>
+                        <li>
+                            <strong>Integración continua y entrega continua (CI/CD):</strong> Herramientas como <span class="font-semibold">Jenkins</span>, <span class="font-semibold">GitHub Actions</span> y <span class="font-semibold">GitLab CI</span> automatizan la construcción, prueba y despliegue del software, permitiendo detectar errores rápidamente y mantener la calidad en cada iteración.
+                        </li>
+                        <li>
+                            <strong>Control de versiones:</strong> Sistemas como <span class="font-semibold">Git</span> y <span class="font-semibold">Subversion (SVN)</span> permiten gestionar los cambios en el código fuente, facilitando la colaboración y la trazabilidad de las modificaciones.
+                        </li>
+                        <li>
+                            <strong>Análisis estático de código:</strong> Herramientas como <span class="font-semibold">SonarQube</span>, <span class="font-semibold">ESLint</span> y <span class="font-semibold">Checkstyle</span> analizan el código en busca de errores, vulnerabilidades y malas prácticas antes de la ejecución, contribuyendo a la mejora de la calidad y la seguridad.
+                        </li>
+                        <li>
+                            <strong>Gestión de incidencias y seguimiento de errores:</strong> Plataformas como <span class="font-semibold">Jira</span>, <span class="font-semibold">Redmine</span> y <span class="font-semibold">Bugzilla</span> ayudan a registrar, priorizar y resolver defectos, facilitando la comunicación entre los equipos de desarrollo y calidad.
+                        </li>
+                        <li>
+                            <strong>Documentación y colaboración:</strong> Herramientas como <span class="font-semibold">Confluence</span>, <span class="font-semibold">Notion</span> y <span class="font-semibold">Google Docs</span> permiten documentar procesos, compartir conocimientos y colaborar de manera eficiente.
+                        </li>
+                        <li>
+                            <strong>Monitoreo y métricas:</strong> Soluciones como <span class="font-semibold">New Relic</span>, <span class="font-semibold">Datadog</span> y <span class="font-semibold">Prometheus</span> permiten monitorear el rendimiento, la disponibilidad y la experiencia del usuario, proporcionando datos clave para la mejora continua.
+                        </li>
+                    </ul>
+                </div>
+                    </ul>
+                    <div class="mt-8 bg-green-50 p-6 rounded-lg">
+                        <p class="text-green-700 font-medium">
+                            La selección e integración adecuada de estas herramientas es esencial para establecer un entorno de desarrollo robusto, colaborativo y orientado a la calidad. Su uso sistemático contribuye a reducir defectos, optimizar procesos y entregar productos de software confiables y alineados con las expectativas del cliente.
+                        </p>
+                    </div>
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Navegación -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 via-green-600 to-orange-500 text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Listo para profundizar más?</h2>
+            <p class="text-xl mb-8 text-blue-100">
+                Continúa explorando las demás secciones de nuestro sistema de gestión de calidad
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="pantalla1.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block text-center">
+                    Volver al Inicio
+                </a>
+                <a href="pantalla3.html" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-block text-center">
+                    Siguiente Sección
+                </a>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🌟 Sistemas de gestión de calidad</h3>
+                    <p class="text-gray-400">
+                        Tu socio confiable para el aprendizaje de calidad en software
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Secciones</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#fundamentos" class="hover:text-white transition-colors">Fundamentos</a></li>
+                        <li><a href="#tecnicas" class="hover:text-white transition-colors">Técnicas</a></li>
+                        <li><a href="#herramientas" class="hover:text-white transition-colors">Herramientas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Estándares ISO</li>
+                        <li>Mejores Prácticas</li>
+                        <li>Casos de Estudio</li>
+                        <li>Herramientas</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>📧 calidad@sistemas.edu</p>
+                        <p>📱 +1 (555) 123-4567</p>
+                        <p>📍 Universidad, País</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Sistemas de gestión de calidad. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad del menú móvil
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Función para scroll suave a secciones
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+
+            // Cerrar menú móvil si está abierto
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        // Función para volver al inicio
+        function goToHome() {
+            alert('Navegando de vuelta a la página de inicio...');
+            // Aquí podrías implementar la navegación real entre páginas
+        }
+
+        // Navegación suave para enlaces del menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+
+        // Efecto de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animaciones
+        document.querySelectorAll('.card-hover').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Observar secciones principales
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <script>
+        (function() {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.innerHTML = "window.__CF$cv$params={r:'9786f76e85b3a79b',t:'MTc1Njc1Mjc2NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros y Contacto - Sistemas de gestión de calidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="pantalla6.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navegación -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="#" onclick="goToHome()" class="text-2xl font-bold text-gray-800 cursor-pointer">🌟 Sistemas de gestión de calidad</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="pantalla1.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
+                        <a href="pantalla2.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Gestión de Calidad</a>
+                        <a href="pantalla3.html" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Procesos</a>
+                        <a href="pantalla4.html" class="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Metodologías</a>
+                        <a href="pantalla5.html" class="text-gray-600 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Recursos</a>
+                        <a href="pantalla6.html" class="bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium">Nosotros</a>
+                        <a href="pantalla7.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Herramientas</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" onclick="goToHome()" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#gestion-calidad" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Gestión de Calidad</a>
+                <a href="#procesos" class="text-gray-600 hover:text-orange-600 block px-3 py-2 rounded-md text-base font-medium">Procesos</a>
+                <a href="#metodologias" class="text-gray-600 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Metodologías</a>
+                <a href="#recursos" class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Recursos</a>
+                <a href="#sobre-nosotros" class="bg-blue-600 text-white block px-3 py-2 rounded-md text-base font-medium">Nosotros</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="sobre-nosotros" class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <div class="text-6xl mb-6 floating-element">👥</div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Sobre Nosotros
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
+                    Somos un equipo multidisciplinario de estudiantes comprometidos con la excelencia en sistemas de gestión de calidad
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="scrollToSection('equipo')" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                        Conocer al Equipo
+                    </button>
+                    <button onclick="scrollToSection('contacto')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                        Contáctanos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nuestra Historia -->
+    <section id="historia" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="text-6xl mb-6">📖</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Nuestra Historia</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Nuestro proyecto nació de la necesidad de crear una plataforma educativa completa sobre sistemas de gestión de calidad, combinando conocimiento académico con experiencia práctica.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Historia del proyecto -->
+                <div class="space-y-8">
+                    <div class="section-card p-8 rounded-xl card-hover">
+                        <div class="flex items-center mb-6">
+                            <div class="text-4xl mr-4">🚀</div>
+                            <h3 class="text-2xl font-bold text-blue-800">Nuestro Origen</h3>
+                        </div>
+                        <div class="space-y-4 text-gray-600">
+                            <p>Este proyecto surge como respuesta a la creciente demanda de conocimiento especializado en sistemas de gestión de calidad en el ámbito empresarial y académico.</p>
+                            <p>Identificamos la necesidad de crear una plataforma integral que combine teoría, práctica y herramientas interactivas para facilitar el aprendizaje de estas metodologías esenciales.</p>
+                            <p>Nuestro enfoque multidisciplinario nos permite abordar el tema desde diferentes perspectivas, enriqueciendo el contenido y la experiencia del usuario.</p>
+                        </div>
+                    </div>
+
+                    <div class="section-card p-8 rounded-xl card-hover">
+                        <div class="flex items-center mb-6">
+                            <div class="text-4xl mr-4">🎯</div>
+                            <h3 class="text-2xl font-bold text-blue-800">Nuestra Misión</h3>
+                        </div>
+                        <div class="space-y-4 text-gray-600">
+                            <p>Nuestra misión es democratizar el acceso al conocimiento sobre sistemas de gestión de calidad, proporcionando recursos educativos de alta calidad y fácil comprensión.</p>
+                            <p>Buscamos ser un puente entre la teoría académica y la aplicación práctica, ayudando a estudiantes y profesionales a implementar estas metodologías en sus organizaciones.</p>
+                            <p>Nos comprometemos a mantener nuestro contenido actualizado y relevante, siguiendo las mejores prácticas y estándares internacionales.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold text-blue-800 text-center mb-8">🕐 Línea de Tiempo</h3>
+
+                    <div class="timeline-item">
+                        <div class="flex items-start">
+                            <div class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-6 flex-shrink-0">
+                                1
+                            </div>
+                            <div class="section-card p-6 rounded-xl flex-1">
+                                <h4 class="font-bold text-blue-800 mb-2">Fase de Investigación</h4>
+                                <div class="space-y-2 text-gray-600 text-sm">
+                                    <p>Investigación exhaustiva sobre metodologías de gestión de calidad</p>
+                                    <p>Análisis de necesidades del mercado y definición de objetivos</p>
+                                    <p>Establecimiento del equipo y distribución de roles</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="flex items-start">
+                            <div class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-6 flex-shrink-0">
+                                2
+                            </div>
+                            <div class="section-card p-6 rounded-xl flex-1">
+                                <h4 class="font-bold text-blue-800 mb-2">Desarrollo del Contenido</h4>
+                                <div class="space-y-2 text-gray-600 text-sm">
+                                    <p>Creación de contenido educativo estructurado y comprensible</p>
+                                    <p>Desarrollo de la plataforma web con diseño intuitivo</p>
+                                    <p>Implementación de herramientas interactivas y recursos descargables</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="flex items-start">
+                            <div class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-6 flex-shrink-0">
+                                3
+                            </div>
+                            <div class="section-card p-6 rounded-xl flex-1">
+                                <h4 class="font-bold text-blue-800 mb-2">Lanzamiento</h4>
+                                <div class="space-y-2 text-gray-600 text-sm">
+                                    <p>Pruebas finales y optimización de la experiencia de usuario</p>
+                                    <p>Publicación oficial de la plataforma educativa</p>
+                                    <p>Inicio de la difusión y recopilación de feedback de usuarios</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Valores -->
+    <section id="valores" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="text-6xl mb-6">💎</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Nuestros Valores</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Los principios que guían nuestro trabajo y definen nuestra identidad como equipo
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="section-card p-8 rounded-xl card-hover text-center">
+                    <div class="text-5xl mb-4 pulse-animation">🎯</div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-4">Excelencia</h3>
+                    <div class="space-y-2 text-gray-600 text-sm">
+                        <p>Buscamos la perfección en cada detalle de nuestro trabajo</p>
+                        <p>Nos comprometemos con los más altos estándares de calidad</p>
+                        <p>Revisamos y mejoramos continuamente nuestros procesos</p>
+                        <p>La excelencia es nuestro objetivo en cada entrega</p>
+                    </div>
+                </div>
+
+                <div class="section-card p-8 rounded-xl card-hover text-center">
+                    <div class="text-5xl mb-4 pulse-animation">🤝</div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-4">Colaboración</h3>
+                    <div class="space-y-2 text-gray-600 text-sm">
+                        <p>Trabajamos unidos hacia objetivos comunes</p>
+                        <p>Valoramos las diferentes perspectivas del equipo</p>
+                        <p>Compartimos conocimientos y experiencias</p>
+                        <p>El éxito del equipo es nuestro éxito individual</p>
+                    </div>
+                </div>
+
+                <div class="section-card p-8 rounded-xl card-hover text-center">
+                    <div class="text-5xl mb-4 pulse-animation">💡</div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-4">Innovación</h3>
+                    <div class="space-y-2 text-gray-600 text-sm">
+                        <p>Exploramos nuevas formas de presentar el conocimiento</p>
+                        <p>Adoptamos tecnologías emergentes en educación</p>
+                        <p>Creamos soluciones creativas a problemas complejos</p>
+                        <p>La innovación impulsa nuestro crecimiento</p>
+                    </div>
+                </div>
+
+                <div class="section-card p-8 rounded-xl card-hover text-center">
+                    <div class="text-5xl mb-4 pulse-animation">🌱</div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-4">Crecimiento</h3>
+                    <div class="space-y-2 text-gray-600 text-sm">
+                        <p>Aprendemos constantemente de cada experiencia</p>
+                        <p>Nos adaptamos a los cambios del entorno</p>
+                        <p>Desarrollamos nuestras habilidades profesionales</p>
+                        <p>El crecimiento personal enriquece al equipo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Equipo -->
+    <section id="equipo" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="text-6xl mb-6">👨‍💼</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Nuestro Equipo</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Conoce a los profesionales que hacen posible este proyecto educativo
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Joaquín Aviléz - Scrum Master -->
+                <div class="team-card p-8 rounded-xl text-center">
+                    <div class="w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center text-4xl text-white">
+                        🎯
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Joaquín Aviléz</h3>
+                    <p class="text-blue-600 font-semibold mb-4">Scrum Master</p>
+                    <div class="space-y-2 mb-6 text-gray-600 text-sm">
+                        <p>Líder del equipo y facilitador del proceso de desarrollo ágil.</p>
+                        <p>Responsable de coordinar las actividades del proyecto y asegurar el cumplimiento de los objetivos.</p>
+                        <p>Especialista en metodologías ágiles y gestión de equipos.</p>
+                    </div>
+                    <div class="flex justify-center space-x-4">
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" title="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </button>
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" title="Email">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Camilo Arce - Programador -->
+                <div class="team-card p-8 rounded-xl text-center">
+                    <div class="w-32 h-32 bg-gradient-to-br from-green-400 to-green-600 rounded-full mx-auto mb-6 flex items-center justify-center text-4xl text-white">
+                        💻
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Camilo Arce</h3>
+                    <p class="text-green-600 font-semibold mb-4">Programador</p>
+                    <div class="space-y-2 mb-6 text-gray-600 text-sm">
+                        <p>Desarrollador principal encargado de la implementación técnica del proyecto.</p>
+                        <p>Especialista en desarrollo web y arquitectura de sistemas.</p>
+                        <p>Responsable de la funcionalidad y optimización del sitio web.</p>
+                    </div>
+                    <div class="flex justify-center space-x-4">
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" title="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </button>
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" title="GitHub">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Constanza Falleti - Documentadora -->
+                <div class="team-card p-8 rounded-xl text-center">
+                    <div class="w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center text-4xl text-white">
+                        📚
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Constanza Falleti</h3>
+                    <p class="text-purple-600 font-semibold mb-4">Documentadora</p>
+                    <div class="space-y-2 mb-6 text-gray-600 text-sm">
+                        <p>Especialista en investigación y creación de contenido técnico.</p>
+                        <p>Responsable de la documentación del proyecto y la redacción de contenidos.</p>
+                        <p>Experta en sistemas de gestión de calidad y normativas ISO.</p>
+                    </div>
+                    <div class="flex justify-center space-x-4">
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" title="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </button>
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" title="Email">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Lucía Muñoz - Diseñadora -->
+                <div class="team-card p-8 rounded-xl text-center">
+                    <div class="w-32 h-32 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full mx-auto mb-6 flex items-center justify-center text-4xl text-white">
+                        🎨
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Lucía Muñoz</h3>
+                    <p class="text-pink-600 font-semibold mb-4">Diseñadora</p>
+                    <div class="space-y-2 mb-6 text-gray-600 text-sm">
+                        <p>Diseñadora UX/UI responsable de la experiencia visual del proyecto.</p>
+                        <p>Especialista en diseño de interfaces y experiencia de usuario.</p>
+                        <p>Encargada de la identidad visual y usabilidad del sitio web.</p>
+                    </div>
+                    <div class="flex justify-center space-x-4">
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" title="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </button>
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" title="Behance">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Formulario de Contacto -->
+    <section id="contacto" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="text-6xl mb-6 floating-element">📧</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Formulario de Contacto</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                    ¿Tienes preguntas, sugerencias o quieres colaborar con nosotros? ¡Nos encantaría escucharte!
+                </p>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">DEMO</span> Este es un formulario de demostración. Los mensajes no se envían realmente.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Formulario -->
+                <div class="section-card p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-6">Envíanos tu mensaje</h3>
+
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre *</label>
+                                <input type="text" id="nombre" name="nombre" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="Tu nombre completo">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                                <input type="email" id="email" name="email" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="tu@email.com">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="asunto" class="block text-sm font-medium text-gray-700 mb-2">Asunto *</label>
+                            <select id="asunto" name="asunto" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                                <option value="">Selecciona un asunto</option>
+                                <option value="consulta-general">Consulta General</option>
+                                <option value="feedback">Feedback sobre el contenido</option>
+                                <option value="sugerencia">Sugerencia de mejora</option>
+                                <option value="colaboracion">Propuesta de colaboración</option>
+                                <option value="error">Reporte de error</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="empresa" class="block text-sm font-medium text-gray-700 mb-2">Empresa/Organización</label>
+                            <input type="text" id="empresa" name="empresa" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="Nombre de tu empresa (opcional)">
+                        </div>
+
+                        <div>
+                            <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-2">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" rows="6" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-none" placeholder="Escribe tu mensaje aquí..."></textarea>
+                        </div>
+
+                        <div class="flex items-start">
+                            <input type="checkbox" id="privacidad" name="privacidad" required class="mt-1 mr-3 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="privacidad" class="text-sm text-gray-600">
+                                Acepto la política de privacidad y el tratamiento de mis datos personales *
+                            </label>
+                        </div>
+
+                        <div class="flex items-start">
+                            <input type="checkbox" id="newsletter" name="newsletter" class="mt-1 mr-3 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="newsletter" class="text-sm text-gray-600">
+                                Quiero recibir actualizaciones y noticias sobre sistemas de gestión de calidad
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 transition-all duration-300 transform hover:scale-105">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Información de contacto -->
+                <div class="space-y-8">
+                    <!-- Información general -->
+                    <div class="section-card p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6">Información de Contacto</h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-2xl mr-4">📧</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Email</h4>
+                                    <p class="text-gray-600">equipo.gestion.calidad@universidad.edu</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="text-2xl mr-4">📱</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Teléfono</h4>
+                                    <p class="text-gray-600">+54 299 123-4567</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="text-2xl mr-4">📍</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Ubicación</h4>
+                                    <div class="space-y-1 text-gray-600">
+                                        <p>Universidad Nacional</p>
+                                        <p>Neuquén Capital, Argentina</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="text-2xl mr-4">🕒</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Horario de Atención</h4>
+                                    <div class="space-y-1 text-gray-600">
+                                        <p>Lunes a Viernes: 9:00 - 18:00</p>
+                                        <p>Sábados: 9:00 - 13:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redes sociales -->
+                    <div class="section-card p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6">Síguenos</h3>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <button class="flex items-center justify-center p-4 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
+                                <svg class="w-6 h-6 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                <span class="font-medium text-blue-800">LinkedIn</span>
+                            </button>
+
+                            <button class="flex items-center justify-center p-4 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
+                                <svg class="w-6 h-6 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                </svg>
+                                <span class="font-medium text-blue-800">Twitter</span>
+                            </button>
+
+                            <button class="flex items-center justify-center p-4 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
+                                <svg class="w-6 h-6 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.017 0z.017 0"/>
+                                </svg>
+                                <span class="font-medium text-blue-800">Pinterest</span>
+                            </button>
+
+                            <button class="flex items-center justify-center p-4 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
+                                <svg class="w-6 h-6 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                                <span class="font-medium text-blue-800">Instagram</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- FAQ rápido -->
+                    <div class="section-card p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6">Preguntas Frecuentes</h3>
+
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">¿Cuánto tiempo tardan en responder?</h4>
+                                <p class="text-gray-600 text-sm">Normalmente respondemos en un plazo de 24-48 horas durante días hábiles.</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">¿Ofrecen consultoría personalizada?</h4>
+                                <p class="text-gray-600 text-sm">Sí, podemos brindar asesoramiento específico según las necesidades de tu organización.</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">¿El contenido es gratuito?</h4>
+                                <p class="text-gray-600 text-sm">Todo nuestro contenido educativo es completamente gratuito y de libre acceso.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mensaje de éxito -->
+    <div id="success-message" class="success-message fixed top-0 left-0 right-0 text-white p-4 text-center z-50">
+        <div class="flex items-center justify-center">
+            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="font-semibold">¡Mensaje enviado correctamente! Te responderemos pronto.</span>
+        </div>
+    </div>
+
+    <!-- Sección de Navegación -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">¡Gracias por conocernos!</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Esperamos que nuestro proyecto te sea útil en tu camino hacia la excelencia en gestión de calidad
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="goToHome()" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Volver al Inicio
+                </button>
+                <button onclick="scrollToSection('contacto')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                    Contáctanos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🌟 Sistemas de gestión de calidad</h3>
+                    <div class="content-placeholder h-4 w-full mb-2"></div>
+                    <div class="content-placeholder h-4 w-3/4"></div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Navegación</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#sobre-nosotros" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#equipo" class="hover:text-white transition-colors">Nuestro Equipo</a></li>
+                        <li><a href="#valores" class="hover:text-white transition-colors">Valores</a></li>
+                        <li><a href="#contacto" class="hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 Email</li>
+                        <li>📱 Teléfono</li>
+                        <li>📍 Ubicación</li>
+                        <li>🕒 Horarios</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Síguenos</h4>
+                    <div class="flex space-x-4">
+                        <button class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </button>
+                        <button class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Sistemas de gestión de calidad. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad del menú móvil
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Función para scroll suave a secciones
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+
+            // Cerrar menú móvil si está abierto
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        // Función para volver al inicio
+        function goToHome() {
+            alert('Navegando de vuelta a la página de inicio...');
+        }
+
+        // Funcionalidad del formulario de contacto
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Validar campos requeridos
+            const nombre = document.getElementById('nombre').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const asunto = document.getElementById('asunto').value;
+            const mensaje = document.getElementById('mensaje').value.trim();
+            const privacidad = document.getElementById('privacidad').checked;
+
+            if (!nombre || !email || !asunto || !mensaje || !privacidad) {
+                alert('Por favor, completa todos los campos requeridos y acepta la política de privacidad.');
+                return;
+            }
+
+            // Validar formato de email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Por favor, ingresa un email válido.');
+                return;
+            }
+
+            // Simular envío del formulario
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+
+            submitButton.textContent = 'Enviando...';
+            submitButton.disabled = true;
+
+            setTimeout(() => {
+                // Mostrar mensaje de éxito
+                const successMessage = document.getElementById('success-message');
+                successMessage.classList.add('show');
+
+                // Limpiar formulario
+                document.getElementById('contact-form').reset();
+
+                // Restaurar botón
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+
+                // Ocultar mensaje después de 5 segundos
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+
+            }, 2000);
+        });
+
+        // Navegación suave para enlaces del menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+
+        // Efecto de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animaciones
+        document.querySelectorAll('.card-hover, .team-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Observar secciones principales
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Animación de entrada para elementos flotantes
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.floating-element').forEach(element => {
+                element.style.animationDelay = Math.random() * 2 + 's';
+            });
+        });
+    </script>
+    <script>
+        (function() {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.innerHTML = "window.__CF$cv$params={r:'978753e23245203e',t:'MTc1Njc1NjU1Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

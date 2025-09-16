@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesos de Desarrollo de Software - Sistemas de gestión de calidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="pantalla3.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navegación -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="#" onclick="goToHome()" class="text-2xl font-bold text-gray-800 cursor-pointer">🌟 Sistemas de gestión de calidad</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                <a href="pantalla1.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
+                <a href="pantalla2.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Gestión de Calidad</a>
+                <a href="pantalla3.html" class="bg-orange-600 text-white block px-3 py-2 rounded-md text-base font-medium">Procesos</a>
+                <a href="pantalla4.html" class="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Metodologías</a>
+                <a href="pantalla5.html" class="text-gray-600 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Recursos</a>
+                <a href="pantalla6.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Nosotros</a>
+                <a href="pantalla7.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Herramientas</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-orange-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" onclick="goToHome()" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#gestion-calidad" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Gestión de Calidad</a>
+                <a href="#procesos" class="bg-orange-600 text-white block px-3 py-2 rounded-md text-base font-medium">Procesos</a>
+                <a href="#metodologias" class="text-gray-600 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Metodologías</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="procesos" class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <div class="text-6xl mb-6">🔄</div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Procesos de Desarrollo de Software
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-orange-100 max-w-4xl mx-auto">
+                    Explora los ciclos de vida, modelos tradicionales y metodologías ágiles que guían el desarrollo de software de calidad.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="scrollToSection('sdlc')" class="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors">
+                        Explorar SDLC
+                    </button>
+                    <button onclick="scrollToSection('modelos-tradicionales')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
+                        Ver Modelos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección SDLC -->
+    <section id="sdlc" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-6">🔄</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Ciclo de Vida del Desarrollo de Software (SDLC)</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    El SDLC es un proceso estructurado que define las fases para desarrollar software de alta calidad
+                </p>
+            </div>
+
+            <!-- Diagrama SDLC -->
+            <div class="mb-12 text-center">
+                <svg class="model-diagram mx-auto" width="800" height="400" viewBox="0 0 800 400">
+                    <!-- Círculo principal -->
+                    <circle cx="400" cy="200" r="180" fill="none" stroke="#3b82f6" stroke-width="3"/>
+                    
+                    <!-- Fases del SDLC -->
+                    <g>
+                        <!-- Planificación -->
+                        <circle cx="400" cy="50" r="40" fill="#3b82f6"/>
+                        <text x="400" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Planificación</text>
+                        <text x="400" y="58" text-anchor="middle" fill="white" font-size="10">y Análisis</text>
+                        
+                        <!-- Diseño -->
+                        <circle cx="556" cy="125" r="40" fill="#10b981"/>
+                        <text x="556" y="130" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Diseño</text>
+                        
+                        <!-- Implementación -->
+                        <circle cx="556" cy="275" r="40" fill="#f59e0b"/>
+                        <text x="556" y="270" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Implementación</text>
+                        <text x="556" y="283" text-anchor="middle" fill="white" font-size="10">y Codificación</text>
+                        
+                        <!-- Pruebas -->
+                        <circle cx="400" cy="350" r="40" fill="#ef4444"/>
+                        <text x="400" y="355" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Pruebas</text>
+                        
+                        <!-- Despliegue -->
+                        <circle cx="244" cy="275" r="40" fill="#8b5cf6"/>
+                        <text x="244" y="280" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Despliegue</text>
+                        
+                        <!-- Mantenimiento -->
+                        <circle cx="244" cy="125" r="40" fill="#06b6d4"/>
+                        <text x="244" y="130" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Mantenimiento</text>
+                    </g>
+                    
+                    <!-- Flechas -->
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+                        </marker>
+                    </defs>
+                    
+                    <path d="M 440 80 Q 500 100 520 125" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <path d="M 556 165 L 556 235" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <path d="M 520 300 Q 460 320 440 340" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <path d="M 360 340 Q 300 320 280 300" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <path d="M 244 235 L 244 165" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <path d="M 280 100 Q 340 80 360 80" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                </svg>
+            </div>
+
+            <!-- Fases del SDLC -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="section-card card-hover p-6 rounded-xl border-l-4 border-blue-500">
+                    <div class="text-3xl mb-3">📋</div>
+                    <h3 class="text-lg font-bold text-blue-800 mb-3">Planificación y Análisis</h3>
+                    <p class="text-sm text-gray-600">Definición de requisitos, análisis de factibilidad y planificación del proyecto</p>
+                </div>
+
+                <div class="section-card card-hover p-6 rounded-xl border-l-4 border-green-500">
+                    <div class="text-3xl mb-3">🎨</div>
+                    <h3 class="text-lg font-bold text-green-800 mb-3">Diseño</h3>
+                    <p class="text-sm text-gray-600">Arquitectura del sistema, diseño de interfaces y especificaciones técnicas</p>
+                </div>
+
+                <div class="section-card card-hover p-6 rounded-xl border-l-4 border-yellow-500">
+                    <div class="text-3xl mb-3">💻</div>
+                    <h3 class="text-lg font-bold text-yellow-800 mb-3">Implementación</h3>
+                    <p class="text-sm text-gray-600">Codificación del software según las especificaciones de diseño</p>
+                </div>
+
+                <div class="section-card card-hover p-6 rounded-xl border-l-4 border-red-500">
+                    <div class="text-3xl mb-3">🧪</div>
+                    <h3 class="text-lg font-bold text-red-800 mb-3">Pruebas</h3>
+                    <p class="text-sm text-gray-600">Verificación y validación del software para asegurar la calidad</p>
+                </div>
+
+                <div class="section-card card-hover p-6 rounded-xl border-l-4 border-purple-500">
+                    <div class="text-3xl mb-3">🚀</div>
+                    <h3 class="text-lg font-bold text-purple-800 mb-3">Despliegue</h3>
+                    <p class="text-sm text-gray-600">Instalación y puesta en producción del software</p>
+                </div>
+
+                <div class="section-card card-hover p-6 rounded-xl border-l-4 border-cyan-500">
+                    <div class="text-3xl mb-3">🔧</div>
+                    <h3 class="text-lg font-bold text-cyan-800 mb-3">Mantenimiento</h3>
+                    <p class="text-sm text-gray-600">Soporte, corrección de errores y mejoras continuas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Modelos Tradicionales -->
+    <section id="modelos-tradicionales" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-6">📊</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-orange-800 mb-4">Modelos Tradicionales</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Conoce los modelos clásicos de desarrollo de software, sus características y cuándo utilizarlos
+                </p>
+            </div>
+
+            <!-- Modelo en Cascada -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-orange-800 mb-6 text-center">Modelo en Cascada</h3>
+
+                    <!-- Diagrama Cascada -->
+                    <div class="mb-8 text-center">
+                        <svg class="model-diagram mx-auto" width="600" height="300" viewBox="0 0 600 300">
+                            <!-- Fases en cascada -->
+                            <rect x="50" y="20" width="120" height="40" fill="#3b82f6" rx="5"/>
+                            <text x="110" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Requisitos</text>
+                            
+                            <rect x="100" y="80" width="120" height="40" fill="#10b981" rx="5"/>
+                            <text x="160" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Diseño</text>
+                            
+                            <rect x="150" y="140" width="120" height="40" fill="#f59e0b" rx="5"/>
+                            <text x="210" y="165" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Implementación</text>
+                            
+                            <rect x="200" y="200" width="120" height="40" fill="#ef4444" rx="5"/>
+                            <text x="260" y="225" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Pruebas</text>
+                            
+                            <rect x="250" y="260" width="120" height="40" fill="#8b5cf6" rx="5"/>
+                            <text x="310" y="285" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Mantenimiento</text>
+                            
+                            <!-- Flechas -->
+                            <path d="M 140 60 L 130 80" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <path d="M 190 120 L 180 140" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <path d="M 240 180 L 230 200" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <path d="M 290 240 L 280 260" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        </svg>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">✅ Ventajas</h4>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• Fácil de entender y gestionar</li>
+                                <li>• Documentación completa</li>
+                                <li>• Ideal para proyectos estables</li>
+                                <li>• Fases bien definidas</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-800 mb-2">❌ Desventajas</h4>
+                            <ul class="text-sm text-red-700 space-y-1">
+                                <li>• Inflexible a cambios</li>
+                                <li>• Detección tardía de errores</li>
+                                <li>• No hay entregas tempranas</li>
+                                <li>• Riesgo alto en proyectos largos</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">🎯 Cuándo Usar</h4>
+                            <ul class="text-sm text-blue-700 space-y-1">
+                                <li>• Requisitos bien definidos</li>
+                                <li>• Proyectos pequeños</li>
+                                <li>• Tecnología conocida</li>
+                                <li>• Regulaciones estrictas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modelo en V -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-orange-800 mb-6 text-center">Modelo en V</h3>
+
+                    <!-- Diagrama V -->
+                    <div class="mb-8 text-center">
+                        <svg class="model-diagram mx-auto" width="700" height="350" viewBox="0 0 700 350">
+                            <!-- Lado izquierdo (Desarrollo) -->
+                            <rect x="50" y="50" width="100" height="30" fill="#3b82f6" rx="3"/>
+                            <text x="100" y="70" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Requisitos</text>
+                            
+                            <rect x="80" y="120" width="100" height="30" fill="#10b981" rx="3"/>
+                            <text x="130" y="140" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Diseño Sistema</text>
+                            
+                            <rect x="110" y="190" width="100" height="30" fill="#f59e0b" rx="3"/>
+                            <text x="160" y="210" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Diseño Detallado</text>
+                            
+                            <rect x="140" y="260" width="100" height="30" fill="#ef4444" rx="3"/>
+                            <text x="190" y="280" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Codificación</text>
+                            
+                            <!-- Lado derecho (Pruebas) -->
+                            <rect x="460" y="260" width="100" height="30" fill="#ef4444" rx="3"/>
+                            <text x="510" y="280" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Pruebas Unitarias</text>
+                            
+                            <rect x="490" y="190" width="100" height="30" fill="#f59e0b" rx="3"/>
+                            <text x="540" y="210" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Pruebas Integración</text>
+                            
+                            <rect x="520" y="120" width="100" height="30" fill="#10b981" rx="3"/>
+                            <text x="570" y="140" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Pruebas Sistema</text>
+                            
+                            <rect x="550" y="50" width="100" height="30" fill="#3b82f6" rx="3"/>
+                            <text x="600" y="70" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Pruebas Aceptación</text>
+                            
+                            <!-- Líneas V -->
+                            <path d="M 150 80 L 180 120" stroke="#6b7280" stroke-width="2"/>
+                            <path d="M 180 150 L 210 190" stroke="#6b7280" stroke-width="2"/>
+                            <path d="M 210 220 L 240 260" stroke="#6b7280" stroke-width="2"/>
+                            <path d="M 240 275 L 460 275" stroke="#6b7280" stroke-width="2"/>
+                            <path d="M 460 260 L 490 220" stroke="#6b7280" stroke-width="2"/>
+                            <path d="M 490 190 L 520 150" stroke="#6b7280" stroke-width="2"/>
+                            <path d="M 520 120 L 550 80" stroke="#6b7280" stroke-width="2"/>
+                            
+                            <!-- Líneas de correspondencia -->
+                            <path d="M 100 80 Q 350 100 600 80" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,5"/>
+                            <path d="M 130 150 Q 350 170 570 150" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,5"/>
+                            <path d="M 160 220 Q 350 240 540 220" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,5"/>
+                        </svg>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">✅ Ventajas</h4>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• Detección temprana de defectos</li>
+                                <li>• Pruebas planificadas desde el inicio</li>
+                                <li>• Mejor trazabilidad</li>
+                                <li>• Enfoque en verificación</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-800 mb-2">❌ Desventajas</h4>
+                            <ul class="text-sm text-red-700 space-y-1">
+                                <li>• Rígido como cascada</li>
+                                <li>• Costoso de cambiar</li>
+                                <li>• No hay prototipos tempranos</li>
+                                <li>• Requiere requisitos estables</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">🎯 Cuándo Usar</h4>
+                            <ul class="text-sm text-blue-700 space-y-1">
+                                <li>• Sistemas críticos</li>
+                                <li>• Requisitos claros y estables</li>
+                                <li>• Proyectos con alta calidad</li>
+                                <li>• Regulaciones de seguridad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modelo Iterativo e Incremental -->
+            <div>
+                <div class="section-card p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-orange-800 mb-6 text-center">Modelo Iterativo e Incremental</h3>
+
+                    <!-- Diagrama Iterativo -->
+                    <div class="mb-8 text-center">
+                        <svg class="model-diagram mx-auto" width="700" height="300" viewBox="0 0 700 300">
+                            <!-- Iteración 1 -->
+                            <g>
+                                <text x="100" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#6b7280">Iteración 1</text>
+                                <rect x="50" y="40" width="30" height="20" fill="#3b82f6" rx="2"/>
+                                <text x="65" y="53" text-anchor="middle" fill="white" font-size="8">Req</text>
+                                <rect x="85" y="40" width="30" height="20" fill="#10b981" rx="2"/>
+                                <text x="100" y="53" text-anchor="middle" fill="white" font-size="8">Dis</text>
+                                <rect x="120" y="40" width="30" height="20" fill="#f59e0b" rx="2"/>
+                                <text x="135" y="53" text-anchor="middle" fill="white" font-size="8">Cod</text>
+                                <rect x="50" y="65" width="100" height="20" fill="#ef4444" rx="2"/>
+                                <text x="100" y="78" text-anchor="middle" fill="white" font-size="8">Pruebas</text>
+                                <rect x="50" y="90" width="100" height="15" fill="#8b5cf6" rx="2"/>
+                                <text x="100" y="100" text-anchor="middle" fill="white" font-size="8">Entrega v1.0</text>
+                            </g>
+                            
+                            <!-- Iteración 2 -->
+                            <g>
+                                <text x="250" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#6b7280">Iteración 2</text>
+                                <rect x="200" y="40" width="30" height="20" fill="#3b82f6" rx="2"/>
+                                <text x="215" y="53" text-anchor="middle" fill="white" font-size="8">Req</text>
+                                <rect x="235" y="40" width="30" height="20" fill="#10b981" rx="2"/>
+                                <text x="250" y="53" text-anchor="middle" fill="white" font-size="8">Dis</text>
+                                <rect x="270" y="40" width="30" height="20" fill="#f59e0b" rx="2"/>
+                                <text x="285" y="53" text-anchor="middle" fill="white" font-size="8">Cod</text>
+                                <rect x="200" y="65" width="100" height="20" fill="#ef4444" rx="2"/>
+                                <text x="250" y="78" text-anchor="middle" fill="white" font-size="8">Pruebas</text>
+                                <rect x="200" y="90" width="100" height="15" fill="#8b5cf6" rx="2"/>
+                                <text x="250" y="100" text-anchor="middle" fill="white" font-size="8">Entrega v2.0</text>
+                            </g>
+                            
+                            <!-- Iteración 3 -->
+                            <g>
+                                <text x="400" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#6b7280">Iteración 3</text>
+                                <rect x="350" y="40" width="30" height="20" fill="#3b82f6" rx="2"/>
+                                <text x="365" y="53" text-anchor="middle" fill="white" font-size="8">Req</text>
+                                <rect x="385" y="40" width="30" height="20" fill="#10b981" rx="2"/>
+                                <text x="400" y="53" text-anchor="middle" fill="white" font-size="8">Dis</text>
+                                <rect x="420" y="40" width="30" height="20" fill="#f59e0b" rx="2"/>
+                                <text x="435" y="53" text-anchor="middle" fill="white" font-size="8">Cod</text>
+                                <rect x="350" y="65" width="100" height="20" fill="#ef4444" rx="2"/>
+                                <text x="400" y="78" text-anchor="middle" fill="white" font-size="8">Pruebas</text>
+                                <rect x="350" y="90" width="100" height="15" fill="#8b5cf6" rx="2"/>
+                                <text x="400" y="100" text-anchor="middle" fill="white" font-size="8">Entrega v3.0</text>
+                            </g>
+                            
+                            <!-- Producto Final -->
+                            <rect x="250" y="140" width="200" height="40" fill="#059669" rx="5"/>
+                            <text x="350" y="165" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Producto Final Completo</text>
+                            
+                            <!-- Flechas -->
+                            <path d="M 100 110 Q 175 125 250 140" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <path d="M 250 110 L 300 140" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <path d="M 400 110 Q 425 125 400 140" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            
+                            <!-- Feedback loops -->
+                            <path d="M 180 75 Q 180 120 200 75" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="3,3"/>
+                            <path d="M 330 75 Q 330 120 350 75" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="3,3"/>
+                            
+                            <text x="350" y="220" text-anchor="middle" font-size="12" fill="#6b7280">Feedback y Mejora Continua</text>
+                        </svg>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">✅ Ventajas</h4>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• Entregas tempranas y frecuentes</li>
+                                <li>• Feedback continuo del usuario</li>
+                                <li>• Reducción de riesgos</li>
+                                <li>• Flexibilidad para cambios</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-800 mb-2">❌ Desventajas</h4>
+                            <ul class="text-sm text-red-700 space-y-1">
+                                <li>• Requiere más recursos</li>
+                                <li>• Gestión más compleja</li>
+                                <li>• Puede ser costoso</li>
+                                <li>• Necesita equipos experimentados</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">🎯 Cuándo Usar</h4>
+                            <ul class="text-sm text-blue-700 space-y-1">
+                                <li>• Proyectos grandes y complejos</li>
+                                <li>• Requisitos cambiantes</li>
+                                <li>• Necesidad de entregas rápidas</li>
+                                <li>• Equipos experimentados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Metodologías Ágiles -->
+    <section id="metodologias-agiles" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-6">🚀</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Metodologías Ágiles</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Explora las metodologías ágiles más populares: Scrum, Kanban y XP, con sus principios, roles y ceremonias
+                </p>
+            </div>
+
+            <!-- Scrum -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl border-l-4 border-green-500">
+                    <h3 class="text-2xl font-bold text-green-800 mb-6 text-center">🏉 Scrum</h3>
+
+                    <!-- Diagrama Scrum -->
+                    <div class="mb-8 text-center">
+                        <svg class="model-diagram mx-auto" width="700" height="400" viewBox="0 0 700 400">
+                            <!-- Product Backlog -->
+                            <rect x="50" y="50" width="100" height="120" fill="#3b82f6" rx="5"/>
+                            <text x="100" y="75" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Product</text>
+                            <text x="100" y="90" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Backlog</text>
+                            <rect x="60" y="100" width="80" height="8" fill="#1e40af" rx="2"/>
+                            <rect x="60" y="115" width="80" height="8" fill="#1e40af" rx="2"/>
+                            <rect x="60" y="130" width="80" height="8" fill="#1e40af" rx="2"/>
+                            <rect x="60" y="145" width="80" height="8" fill="#1e40af" rx="2"/>
+                            
+                            <!-- Sprint Backlog -->
+                            <rect x="200" y="80" width="100" height="80" fill="#10b981" rx="5"/>
+                            <text x="250" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Sprint</text>
+                            <text x="250" y="120" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Backlog</text>
+                            <rect x="210" y="130" width="80" height="6" fill="#059669" rx="1"/>
+                            <rect x="210" y="140" width="80" height="6" fill="#059669" rx="1"/>
+                            <rect x="210" y="150" width="80" height="6" fill="#059669" rx="1"/>
+                            
+                            <!-- Sprint (2-4 semanas) -->
+                            <rect x="350" y="50" width="150" height="120" fill="#f59e0b" rx="5"/>
+                            <text x="425" y="75" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Sprint (2-4 semanas)</text>
+                            
+                            <!-- Daily Scrum -->
+                            <circle cx="380" cy="110" r="15" fill="#fbbf24"/>
+                            <text x="380" y="115" text-anchor="middle" fill="white" font-size="8">Daily</text>
+                            
+                            <!-- Sprint Review -->
+                            <circle cx="425" cy="110" r="15" fill="#fbbf24"/>
+                            <text x="425" y="115" text-anchor="middle" fill="white" font-size="8">Review</text>
+                            
+                            <!-- Sprint Retrospective -->
+                            <circle cx="470" cy="110" r="15" fill="#fbbf24"/>
+                            <text x="470" y="115" text-anchor="middle" fill="white" font-size="8">Retro</text>
+                            
+                            <!-- Increment -->
+                            <rect x="550" y="80" width="100" height="80" fill="#8b5cf6" rx="5"/>
+                            <text x="600" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Product</text>
+                            <text x="600" y="120" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Increment</text>
+                            <text x="600" y="140" text-anchor="middle" fill="white" font-size="10">Potentially</text>
+                            <text x="600" y="152" text-anchor="middle" fill="white" font-size="10">Shippable</text>
+                            
+                            <!-- Roles -->
+                            <g>
+                                <text x="100" y="220" text-anchor="middle" font-size="14" font-weight="bold" fill="#6b7280">Roles Scrum</text>
+                                
+                                <circle cx="80" cy="250" r="25" fill="#3b82f6"/>
+                                <text x="80" y="245" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Product</text>
+                                <text x="80" y="257" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Owner</text>
+                                
+                                <circle cx="150" cy="250" r="25" fill="#10b981"/>
+                                <text x="150" y="245" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Scrum</text>
+                                <text x="150" y="257" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Master</text>
+                                
+                                <circle cx="220" cy="250" r="25" fill="#f59e0b"/>
+                                <text x="220" y="245" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Dev</text>
+                                <text x="220" y="257" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Team</text>
+                            </g>
+                            
+                            <!-- Flechas -->
+                            <path d="M 150 110 L 200 110" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <path d="M 300 120 L 350 120" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <path d="M 500 110 L 550 110" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            
+                            <!-- Feedback loop -->
+                            <path d="M 600 160 Q 650 200 100 200 Q 50 180 100 170" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5"/>
+                            <text x="350" y="350" text-anchor="middle" font-size="12" fill="#ef4444">Feedback y Mejora Continua</text>
+                        </svg>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">👥 Roles</h4>
+                            <ul class="text-sm text-blue-700 space-y-1">
+                                <li>• Product Owner</li>
+                                <li>• Scrum Master</li>
+                                <li>• Development Team</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">📋 Artefactos</h4>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• Product Backlog</li>
+                                <li>• Sprint Backlog</li>
+                                <li>• Product Increment</li>
+                            </ul>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-800 mb-2">🎯 Ceremonias</h4>
+                            <ul class="text-sm text-orange-700 space-y-1">
+                                <li>• Sprint Planning</li>
+                                <li>• Daily Scrum</li>
+                                <li>• Sprint Review</li>
+                                <li>• Sprint Retrospective</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibent text-purple-800 mb-2">⚡ Principios</h4>
+                            <ul class="text-sm text-purple-700 space-y-1">
+                                <li>• Transparencia</li>
+                                <li>• Inspección</li>
+                                <li>• Adaptación</li>
+                                <li>• Empirismo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kanban -->
+            <div class="mb-16">
+                <div class="section-card p-8 rounded-xl border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-6 text-center">📋 Kanban</h3>
+
+                    <!-- Diagrama Kanban -->
+                    <div class="mb-8 text-center">
+                        <svg class="model-diagram mx-auto" width="600" height="300" viewBox="0 0 600 300">
+                            <!-- Tablero Kanban -->
+                            <rect x="50" y="50" width="500" height="200" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" rx="5"/>
+                            
+                            <!-- Columnas -->
+                            <rect x="70" y="70" width="110" height="160" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+                            <text x="125" y="90" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">To Do</text>
+                            
+                            <rect x="190" y="70" width="110" height="160" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" rx="3"/>
+                            <text x="245" y="90" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">In Progress</text>
+                            
+                            <rect x="310" y="70" width="110" height="160" fill="#fce7f3" stroke="#ec4899" stroke-width="1" rx="3"/>
+                            <text x="365" y="90" text-anchor="middle" font-size="12" font-weight="bold" fill="#be185d">Review</text>
+                            
+                            <rect x="430" y="70" width="110" height="160" fill="#dcfce7" stroke="#10b981" stroke-width="1" rx="3"/>
+                            <text x="485" y="90" text-anchor="middle" font-size="12" font-weight="bold" fill="#047857">Done</text>
+                            
+                            <!-- Tarjetas -->
+                            <!-- To Do -->
+                            <rect x="80" y="100" width="90" height="25" fill="#fbbf24" rx="2"/>
+                            <text x="125" y="117" text-anchor="middle" font-size="10" fill="white">Tarea 1</text>
+                            <rect x="80" y="130" width="90" height="25" fill="#fbbf24" rx="2"/>
+                            <text x="125" y="147" text-anchor="middle" font-size="10" fill="white">Tarea 2</text>
+                            <rect x="80" y="160" width="90" height="25" fill="#fbbf24" rx="2"/>
+                            <text x="125" y="177" text-anchor="middle" font-size="10" fill="white">Tarea 3</text>
+                            
+                            <!-- In Progress -->
+                            <rect x="200" y="100" width="90" height="25" fill="#3b82f6" rx="2"/>
+                            <text x="245" y="117" text-anchor="middle" font-size="10" fill="white">Tarea 4</text>
+                            <rect x="200" y="130" width="90" height="25" fill="#3b82f6" rx="2"/>
+                            <text x="245" y="147" text-anchor="middle" font-size="10" fill="white">Tarea 5</text>
+                            
+                            <!-- Review -->
+                            <rect x="320" y="100" width="90" height="25" fill="#ec4899" rx="2"/>
+                            <text x="365" y="117" text-anchor="middle" font-size="10" fill="white">Tarea 6</text>
+                            
+                            <!-- Done -->
+                            <rect x="440" y="100" width="90" height="25" fill="#10b981" rx="2"/>
+                            <text x="485" y="117" text-anchor="middle" font-size="10" fill="white">Tarea 7</text>
+                            <rect x="440" y="130" width="90" height="25" fill="#10b981" rx="2"/>
+                            <text x="485" y="147" text-anchor="middle" font-size="10" fill="white">Tarea 8</text>
+                            <rect x="440" y="160" width="90" height="25" fill="#10b981" rx="2"/>
+                            <text x="485" y="177" text-anchor="middle" font-size="10" fill="white">Tarea 9</text>
+                            
+                            <!-- WIP Limits -->
+                            <circle cx="245" cy="75" r="8" fill="#ef4444"/>
+                            <text x="245" y="79" text-anchor="middle" font-size="8" fill="white" font-weight="bold">2</text>
+                            <circle cx="365" cy="75" r="8" fill="#ef4444"/>
+                            <text x="365" y="79" text-anchor="middle" font-size="8" fill="white" font-weight="bold">1</text>
+                            
+                            <!-- Flecha de flujo -->
+                            <path d="M 180 200 Q 300 220 420 200" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <text x="300" y="270" text-anchor="middle" font-size="12" fill="#6b7280">Flujo Continuo</text>
+                        </svg>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-yellow-800 mb-2">📊 Principios</h4>
+                            <ul class="text-sm text-yellow-700 space-y-1">
+                                <li>• Visualizar el trabajo</li>
+                                <li>• Limitar WIP</li>
+                                <li>• Gestionar el flujo</li>
+                                <li>• Hacer políticas explícitas</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">🎯 Beneficios</h4>
+                            <ul class="text-sm text-blue-700 space-y-1">
+                                <li>• Flexibilidad</li>
+                                <li>• Flujo continuo</li>
+                                <li>• Reducción de desperdicios</li>
+                                <li>• Mejora continua</li>
+                            </ul>
+                        </div>
+                        <div class="bg-pink-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-pink-800 mb-2">📋 Métricas</h4>
+                            <ul class="text-sm text-pink-700 space-y-1">
+                                <li>• Lead Time</li>
+                                <li>• Cycle Time</li>
+                                <li>• Throughput</li>
+                                <li>• WIP</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">🔧 Prácticas</h4>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• Tablero visual</li>
+                                <li>• Límites WIP</li>
+                                <li>• Políticas explícitas</li>
+                                <li>• Cadencias de servicio</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- XP (Extreme Programming) -->
+            <div>
+                <div class="section-card p-8 rounded-xl border-l-4 border-red-500">
+                    <h3 class="text-2xl font-bold text-red-800 mb-6 text-center">⚡ Extreme Programming (XP)</h3>
+
+                    <!-- Diagrama XP -->
+                    <div class="mb-8 text-center">
+                        <svg class="model-diagram mx-auto" width="600" height="350" viewBox="0 0 600 350">
+                            <!-- Círculo central -->
+                            <circle cx="300" cy="175" r="80" fill="#ef4444"/>
+                            <text x="300" y="170" text-anchor="middle" fill="white" font-size="16" font-weight="bold">XP</text>
+                            <text x="300" y="185" text-anchor="middle" fill="white" font-size="12">Extreme</text>
+                            <text x="300" y="198" text-anchor="middle" fill="white" font-size="12">Programming</text>
+                            
+                            <!-- Valores -->
+                            <g>
+                                <circle cx="150" cy="100" r="35" fill="#3b82f6"/>
+                                <text x="150" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Comunicación</text>
+                                
+                                <circle cx="450" cy="100" r="35" fill="#10b981"/>
+                                <text x="450" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Simplicidad</text>
+                                
+                                <circle cx="150" cy="250" r="35" fill="#f59e0b"/>
+                                <text x="150" y="255" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Feedback</text>
+                                
+                                <circle cx="450" cy="250" r="35" fill="#8b5cf6"/>
+                                <text x="450" y="255" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Coraje</text>
+                            </g>
+                            
+                            <!-- Prácticas -->
+                            <g>
+                                <rect x="50" y="30" width="80" height="20" fill="#1e40af" rx="3"/>
+                                <text x="90" y="43" text-anchor="middle" fill="white" font-size="10">Pair Programming</text>
+                                
+                                <rect x="470" y="30" width="80" height="20" fill="#059669" rx="3"/>
+                                <text x="510" y="43" text-anchor="middle" fill="white" font-size="10">Simple Design</text>
+                                
+                                <rect x="50" y="300" width="80" height="20" fill="#d97706" rx="3"/>
+                                <text x="90" y="313" text-anchor="middle" fill="white" font-size="10">Short Releases</text>
+                                
+                                <rect x="470" y="300" width="80" height="20" fill="#7c3aed" rx="3"/>
+                                <text x="510" y="313" text-anchor="middle" fill="white" font-size="10">Refactoring</text>
+                                
+                                <rect x="250" y="30" width="100" height="20" fill="#dc2626" rx="3"/>
+                                <text x="300" y="43" text-anchor="middle" fill="white" font-size="10">Test-Driven Development</text>
+                                
+                                <rect x="250" y="300" width="100" height="20" fill="#dc2626" rx="3"/>
+                                <text x="300" y="313" text-anchor="middle" fill="white" font-size="10">Continuous Integration</text>
+                            </g>
+                            
+                            <!-- Líneas conectoras -->
+                            <path d="M 185 125 L 265 155" stroke="#6b7280" stroke-width="2"/>
+                            <path d="M 415 125 L 335 155" stroke="#6b7280" stroke-width="2"/>
+                            <path d="M 185 225 L 265 195" stroke="#6b7280" stroke-width="2"/>
+                            <path d="M 415 225 L 335 195" stroke="#6b7280" stroke-width="2"/>
+                        </svg>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">💎 Valores</h4>
+                            <ul class="text-sm text-blue-700 space-y-1">
+                                <li>• Comunicación</li>
+                                <li>• Simplicidad</li>
+                                <li>• Feedback</li>
+                                <li>• Coraje</li>
+                                <li>• Respeto</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-800 mb-2">🛠️ Prácticas</h4>
+                            <ul class="text-sm text-red-700 space-y-1">
+                                <li>• Test-Driven Development</li>
+                                <li>• Pair Programming</li>
+                                <li>• Refactoring</li>
+                                <li>• Simple Design</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">🔄 Procesos</h4>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• Planning Game</li>
+                                <li>• Small Releases</li>
+                                <li>• Continuous Integration</li>
+                                <li>• Collective Code Ownership</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-800 mb-2">🎯 Beneficios</h4>
+                            <ul class="text-sm text-purple-700 space-y-1">
+                                <li>• Alta calidad de código</li>
+                                <li>• Respuesta rápida a cambios</li>
+                                <li>• Reducción de defectos</li>
+                                <li>• Satisfacción del cliente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Navegación -->
+    <section class="py-16 bg-gradient-to-r from-orange-600 via-green-600 to-blue-600 text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Listo para continuar aprendiendo?</h2>
+            <p class="text-xl mb-8 text-orange-100">
+                Explora más secciones de nuestro sistema de gestión de calidad
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="goToHome()" class="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Volver al Inicio
+                </button>
+                <button onclick="alert('Próximamente: JavaScript Funcional')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
+                    Siguiente Sección
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🌟 Sistemas de gestión de calidad</h3>
+                    <p class="text-gray-400">
+                        Tu socio confiable para el aprendizaje de procesos de desarrollo
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Secciones</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#sdlc" class="hover:text-white transition-colors">SDLC</a></li>
+                        <li><a href="#modelos-tradicionales" class="hover:text-white transition-colors">Modelos Tradicionales</a></li>
+                        <li><a href="#metodologias-agiles" class="hover:text-white transition-colors">Metodologías Ágiles</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Metodologías</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Scrum</li>
+                        <li>Kanban</li>
+                        <li>Extreme Programming</li>
+                        <li>Modelo en Cascada</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>📧 procesos@sistemas.edu</p>
+                        <p>📱 +1 (555) 123-4567</p>
+                        <p>📍 Universidad, País</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Sistemas de gestión de calidad. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad del menú móvil
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Función para scroll suave a secciones
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+
+            // Cerrar menú móvil si está abierto
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        // Función para volver al inicio
+        function goToHome() {
+            alert('Navegando de vuelta a la página de inicio...');
+            // Aquí podrías implementar la navegación real entre páginas
+        }
+
+        // Navegación suave para enlaces del menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+
+        // Efecto de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animaciones
+        document.querySelectorAll('.card-hover').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Observar secciones principales
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <script>
+        (function() {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.innerHTML = "window.__CF$cv$params={r:'97870a8f60682031',t:'MTc1Njc1MzU0OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

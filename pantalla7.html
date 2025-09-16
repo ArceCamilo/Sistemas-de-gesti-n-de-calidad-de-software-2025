@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herramientas Interactivas - Sistemas de gestión de calidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="pantalla7.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navegación -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="#" onclick="goToHome()" class="text-2xl font-bold text-gray-800 cursor-pointer">🌟 Sistemas de gestión de calidad</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="pantalla1.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
+                        <a href="pantalla2.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Gestión de Calidad</a>
+                        <a href="pantalla3.html" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Procesos</a>
+                        <a href="pantalla4.html" class="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Metodologías</a>
+                        <a href="pantalla5.html" class="text-gray-600 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Recursos</a>
+                        <a href="pantalla6.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Nosotros</a>
+                        <a href="pantalla7.html" class="bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium">Herramientas</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" onclick="goToHome()" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#gestion-calidad" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Gestión de Calidad</a>
+                <a href="#procesos" class="text-gray-600 hover:text-orange-600 block px-3 py-2 rounded-md text-base font-medium">Procesos</a>
+                <a href="#metodologias" class="text-gray-600 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Metodologías</a>
+                <a href="#recursos" class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Recursos</a>
+                <a href="#herramientas" class="bg-blue-600 text-white block px-3 py-2 rounded-md text-base font-medium">Herramientas</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="herramientas" class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <div class="text-6xl mb-6 floating-element">🛠️</div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Herramientas Interactivas
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
+                    Descubre las mejores metodologías para tu proyecto con nuestras herramientas especializadas
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="showTool('comparador')" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                        Comparador de Metodologías
+                    </button>
+                    <button onclick="showTool('encuesta')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                        Encuesta de Preferencias
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegación de herramientas -->
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center space-x-4">
+                <button id="tab-comparador" onclick="showTool('comparador')" class="tab-button active px-6 py-3 rounded-lg font-semibold transition-all">
+                    🔍 Comparador de Metodologías
+                </button>
+                <button id="tab-encuesta" onclick="showTool('encuesta')" class="tab-button bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold transition-all">
+                    📋 Encuesta de Preferencias
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Herramienta 1: Comparador de Metodologías -->
+    <section id="tool-comparador" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Introducción -->
+            <div class="text-center mb-12">
+                <div class="text-5xl mb-4">🔍</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Comparador de Metodologías</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                    Selecciona dos o más metodologías para comparar sus características, ventajas y aplicaciones
+                </p>
+            </div>
+
+            <!-- Selección de metodologías -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-blue-800 mb-6 text-center">Selecciona las metodologías a comparar</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- ISO 9001 -->
+                    <div class="methodology-card p-6 rounded-xl" onclick="toggleMethodology('iso9001')" data-methodology="iso9001">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">📋</div>
+                            <h4 class="text-xl font-bold text-blue-800 mb-2">ISO 9001</h4>
+                            <span class="methodology-badge badge-iso">Certificación</span>
+                            <p class="text-gray-600 text-sm mt-3">Sistema de gestión de calidad basado en estándares internacionales</p>
+                        </div>
+                    </div>
+
+                    <!-- Lean Manufacturing -->
+                    <div class="methodology-card p-6 rounded-xl" onclick="toggleMethodology('lean')" data-methodology="lean">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">⚡</div>
+                            <h4 class="text-xl font-bold text-blue-800 mb-2">Lean Manufacturing</h4>
+                            <span class="methodology-badge badge-lean">Eficiencia</span>
+                            <p class="text-gray-600 text-sm mt-3">Eliminación de desperdicios y optimización de procesos</p>
+                        </div>
+                    </div>
+
+                    <!-- Six Sigma -->
+                    <div class="methodology-card p-6 rounded-xl" onclick="toggleMethodology('sixsigma')" data-methodology="sixsigma">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">📊</div>
+                            <h4 class="text-xl font-bold text-blue-800 mb-2">Six Sigma</h4>
+                            <span class="methodology-badge badge-six-sigma">Estadística</span>
+                            <p class="text-gray-600 text-sm mt-3">Reducción de defectos mediante análisis estadístico</p>
+                        </div>
+                    </div>
+
+                    <!-- Kaizen -->
+                    <div class="methodology-card p-6 rounded-xl" onclick="toggleMethodology('kaizen')" data-methodology="kaizen">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">🔄</div>
+                            <h4 class="text-xl font-bold text-blue-800 mb-2">Kaizen</h4>
+                            <span class="methodology-badge badge-kaizen">Mejora Continua</span>
+                            <p class="text-gray-600 text-sm mt-3">Filosofía de mejora continua e incremental</p>
+                        </div>
+                    </div>
+
+                    <!-- TQM -->
+                    <div class="methodology-card p-6 rounded-xl" onclick="toggleMethodology('tqm')" data-methodology="tqm">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">🎯</div>
+                            <h4 class="text-xl font-bold text-blue-800 mb-2">TQM</h4>
+                            <span class="methodology-badge badge-tqm">Gestión Total</span>
+                            <p class="text-gray-600 text-sm mt-3">Gestión Total de la Calidad en toda la organización</p>
+                        </div>
+                    </div>
+
+                    <!-- PDCA -->
+                    <div class="methodology-card p-6 rounded-xl" onclick="toggleMethodology('pdca')" data-methodology="pdca">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">🔁</div>
+                            <h4 class="text-xl font-bold text-blue-800 mb-2">PDCA</h4>
+                            <span class="methodology-badge badge-pdca">Ciclo</span>
+                            <p class="text-gray-600 text-sm mt-3">Ciclo Planificar-Hacer-Verificar-Actuar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="text-center mb-8">
+                <button onclick="compareMethodologies()" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors mr-4">
+                    Comparar Seleccionadas
+                </button>
+                <button onclick="clearSelection()" class="bg-gray-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-600 transition-colors">
+                    Limpiar Selección
+                </button>
+            </div>
+
+            <!-- Tabla de comparación -->
+            <div id="comparison-results" class="hidden">
+                <h3 class="text-2xl font-bold text-blue-800 mb-6 text-center">Tabla Comparativa</h3>
+                <div class="comparison-table rounded-xl overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table id="comparison-table" class="w-full">
+                            <thead class="bg-blue-600 text-white">
+                                <tr>
+                                    <th class="px-6 py-4 text-left font-semibold">Característica</th>
+                                    <!-- Las columnas de metodologías se agregan dinámicamente -->
+                                </tr>
+                            </thead>
+                            <tbody id="comparison-body">
+                                <!-- Las filas se agregan dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Herramienta 2: Encuesta de Preferencias -->
+    <section id="tool-encuesta" class="py-16 bg-white hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Introducción -->
+            <div class="text-center mb-12">
+                <div class="text-5xl mb-4">📋</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Encuesta de Preferencias Metodológicas</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                    Responde algunas preguntas sobre tu proyecto y obtén una recomendación personalizada
+                </p>
+            </div>
+
+            <!-- Indicador de progreso -->
+            <div class="mb-8">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm font-medium text-blue-600">Progreso de la encuesta</span>
+                    <span id="progress-text" class="text-sm font-medium text-blue-600">0/8 preguntas</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div id="progress-bar" class="progress-bar h-2 rounded-full" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Indicadores de pasos -->
+            <div class="flex justify-center space-x-4 mb-12">
+                <div class="step-indicator active" id="step-1">1</div>
+                <div class="step-indicator" id="step-2">2</div>
+                <div class="step-indicator" id="step-3">3</div>
+                <div class="step-indicator" id="step-4">4</div>
+                <div class="step-indicator" id="step-5">5</div>
+                <div class="step-indicator" id="step-6">6</div>
+                <div class="step-indicator" id="step-7">7</div>
+                <div class="step-indicator" id="step-8">8</div>
+            </div>
+
+            <!-- Preguntas de la encuesta -->
+            <div id="survey-questions">
+                <!-- Pregunta 1 -->
+                <div class="survey-card p-8 rounded-xl mb-8 question-card" id="question-1">
+                    <h3 class="text-xl font-bold text-blue-800 mb-6">1. ¿Cuál es el tamaño de tu organización?</h3>
+                    <div class="space-y-3">
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(1, 'pequeña', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">🏢</div>
+                                <div>
+                                    <h4 class="font-semibold">Pequeña empresa (1-50 empleados)</h4>
+                                    <p class="text-gray-600 text-sm">Estructura simple, recursos limitados</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(1, 'mediana', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">🏬</div>
+                                <div>
+                                    <h4 class="font-semibold">Mediana empresa (51-250 empleados)</h4>
+                                    <p class="text-gray-600 text-sm">Estructura departamental, recursos moderados</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(1, 'grande', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">🏭</div>
+                                <div>
+                                    <h4 class="font-semibold">Gran empresa (250+ empleados)</h4>
+                                    <p class="text-gray-600 text-sm">Estructura compleja, recursos abundantes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="survey-card p-8 rounded-xl mb-8 question-card hidden" id="question-2">
+                    <h3 class="text-xl font-bold text-blue-800 mb-6">2. ¿Cuál es tu sector industrial?</h3>
+                    <div class="space-y-3">
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(2, 'manufactura', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">⚙️</div>
+                                <div>
+                                    <h4 class="font-semibold">Manufactura</h4>
+                                    <p class="text-gray-600 text-sm">Producción de bienes físicos</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(2, 'servicios', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">💼</div>
+                                <div>
+                                    <h4 class="font-semibold">Servicios</h4>
+                                    <p class="text-gray-600 text-sm">Prestación de servicios profesionales</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(2, 'tecnologia', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">💻</div>
+                                <div>
+                                    <h4 class="font-semibold">Tecnología</h4>
+                                    <p class="text-gray-600 text-sm">Desarrollo de software y tecnología</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(2, 'salud', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">🏥</div>
+                                <div>
+                                    <h4 class="font-semibold">Salud</h4>
+                                    <p class="text-gray-600 text-sm">Servicios médicos y sanitarios</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="survey-card p-8 rounded-xl mb-8 question-card hidden" id="question-3">
+                    <h3 class="text-xl font-bold text-blue-800 mb-6">3. ¿Cuál es tu objetivo principal?</h3>
+                    <div class="space-y-3">
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(3, 'certificacion', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">🏆</div>
+                                <div>
+                                    <h4 class="font-semibold">Obtener certificación</h4>
+                                    <p class="text-gray-600 text-sm">Cumplir con estándares internacionales</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(3, 'eficiencia', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">⚡</div>
+                                <div>
+                                    <h4 class="font-semibold">Mejorar eficiencia</h4>
+                                    <p class="text-gray-600 text-sm">Optimizar procesos y reducir desperdicios</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(3, 'defectos', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">🎯</div>
+                                <div>
+                                    <h4 class="font-semibold">Reducir defectos</h4>
+                                    <p class="text-gray-600 text-sm">Minimizar errores y variabilidad</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(3, 'cultura', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">🌱</div>
+                                <div>
+                                    <h4 class="font-semibold">Cambiar cultura organizacional</h4>
+                                    <p class="text-gray-600 text-sm">Fomentar mejora continua</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="survey-card p-8 rounded-xl mb-8 question-card hidden" id="question-4">
+                    <h3 class="text-xl font-bold text-blue-800 mb-6">4. ¿Cuál es tu presupuesto disponible?</h3>
+                    <div class="space-y-3">
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(4, 'bajo', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">💰</div>
+                                <div>
+                                    <h4 class="font-semibold">Presupuesto limitado</h4>
+                                    <p class="text-gray-600 text-sm">Recursos mínimos para implementación</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(4, 'medio', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">💵</div>
+                                <div>
+                                    <h4 class="font-semibold">Presupuesto moderado</h4>
+                                    <p class="text-gray-600 text-sm">Recursos suficientes para proyecto estándar</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(4, 'alto', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">💎</div>
+                                <div>
+                                    <h4 class="font-semibold">Presupuesto amplio</h4>
+                                    <p class="text-gray-600 text-sm">Recursos abundantes para implementación completa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ...continúa el resto de preguntas y secciones tal como en tu código original... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- (Resto del HTML original: secciones, footer y scripts) -->
+    <!-- Pega aquí todo el resto de tu HTML sin cambios, incluyendo <script> con tus funciones -->
+    <script>
+        // Funcionalidad del menú móvil
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+        }
+
+        function goToHome() {
+            alert('Navegando de vuelta a la página de inicio...');
+        }
+
+        // Tabs herramientas
+        function showTool(tool) {
+            const comp = document.getElementById('tool-comparador');
+            const enc = document.getElementById('tool-encuesta');
+            const tComp = document.getElementById('tab-comparador');
+            const tEnc = document.getElementById('tab-encuesta');
+            if (tool === 'comparador') {
+                comp.classList.remove('hidden');
+                enc.classList.add('hidden');
+                tComp.classList.add('active');
+                tEnc.classList.remove('active');
+            } else {
+                enc.classList.remove('hidden');
+                comp.classList.add('hidden');
+                tEnc.classList.add('active');
+                tComp.classList.remove('active');
+            }
+        }
+
+        // Comparador (placeholders mínimos para que funcione el UI)
+        const selected = new Set();
+
+        function toggleMethodology(key) {
+            const card = document.querySelector(`.methodology-card[data-methodology="${key}"]`);
+            if (selected.has(key)) {
+                selected.delete(key);
+                card.classList.remove('selected');
+            } else {
+                selected.add(key);
+                card.classList.add('selected');
+            }
+        }
+
+        function clearSelection() {
+            selected.forEach(k => {
+                const c = document.querySelector(`.methodology-card[data-methodology="${k}"]`);
+                if (c) c.classList.remove('selected');
+            });
+            selected.clear();
+            document.getElementById('comparison-results').classList.add('hidden');
+        }
+
+        function compareMethodologies() {
+            if (selected.size < 2) {
+                alert('Selecciona al menos dos metodologías para comparar.');
+                return;
+            }
+            // aquí iría tu lógica de comparación y llenado de la tabla
+            document.getElementById('comparison-results').classList.remove('hidden');
+        }
+
+        // Encuesta
+        const answers = {};
+        let currentQ = 1;
+
+        function setProgress(q) {
+            const total = 8;
+            const pct = (Object.keys(answers).length / total) * 100;
+            document.getElementById('progress-bar').style.width = pct + '%';
+            document.getElementById('progress-text').textContent = `${Object.keys(answers).length}/${total} preguntas`;
+            for (let i = 1; i <= total; i++) {
+                const el = document.getElementById(`step-${i}`);
+                el.classList.remove('active', 'completed');
+                if (i < q) el.classList.add('completed');
+                else if (i === q) el.classList.add('active');
+            }
+        }
+
+        function selectOption(q, value, el) {
+            answers[q] = value;
+            // marcar visual
+            document.querySelectorAll(`#question-${q} .survey-option`).forEach(o => o.classList.remove('selected'));
+            el.classList.add('selected');
+            // avanzar
+            const curr = document.getElementById(`question-${q}`);
+            const next = document.getElementById(`question-${q+1}`);
+            if (next) {
+                curr.classList.add('hidden');
+                next.classList.remove('hidden');
+                currentQ = q + 1;
+                setProgress(currentQ);
+                next.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            } else {
+                setProgress(q + 1);
+                // aquí podrías calcular y mostrar recomendación
+                alert('¡Encuesta completada! (demo)');
+            }
+        }
+        setProgress(currentQ);
+
+        // Efecto de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('fade-in');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.card-hover, .methodology-card').forEach(card => observer.observe(card));
+        document.querySelectorAll('section').forEach(section => observer.observe(section));
+    </script>
+</body>
+
+</html>

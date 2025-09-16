@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos y Aprendizaje - Sistemas de gestión de calidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="pantalla5.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navegación -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="#" onclick="goToHome()" class="text-2xl font-bold text-gray-800 cursor-pointer">🌟 Sistemas de gestión de calidad</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="pantalla1.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
+                        <a href="pantalla2.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Gestión de Calidad</a>
+                        <a href="pantalla3.html" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Procesos</a>
+                        <a href="pantalla4.html" class="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Metodologías</a>
+                        <a href="pantalla5.html" class="bg-purple-600 text-white px-3 py-2 rounded-md text-sm font-medium">Recursos</a>
+                        <a href="pantalla6.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Nosotros</a>
+                        <a href="pantalla7.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Herramientas</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-purple-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" onclick="goToHome()" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#gestion-calidad" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Gestión de Calidad</a>
+                <a href="#procesos" class="text-gray-600 hover:text-orange-600 block px-3 py-2 rounded-md text-base font-medium">Procesos</a>
+                <a href="#metodologias" class="text-gray-600 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Metodologías</a>
+                <a href="#recursos" class="bg-purple-600 text-white block px-3 py-2 rounded-md text-base font-medium">Recursos</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="recursos" class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <div class="text-6xl mb-6">📚</div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Recursos y Aprendizaje
+                </h1>
+                <div class="content-placeholder h-6 w-96 mx-auto mb-8"></div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="scrollToSection('glosario')" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors">
+                        Explorar Glosario
+                    </button>
+                    <button onclick="scrollToSection('faq')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors">
+                        Ver FAQ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Glosario -->
+    <section id="glosario" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-6">📖</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-purple-800 mb-4">Glosario de Términos</h2>
+                <div class="content-placeholder h-4 w-80 mx-auto mb-8"></div>
+
+                <!-- Buscador -->
+                <div class="max-w-md mx-auto">
+                    <div class="relative">
+                        <input type="text" id="search-glossary" placeholder="Buscar término..." class="w-full px-4 py-3 pl-10 pr-4 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="showAllGlossary()" class="px-3 py-1 bg-gray-100 text-gray-800 rounded hover:bg-gray-200 transition-colors">Todos</button>
+        </div>
+        </div>
+
+        <!-- Términos del Glosario -->
+        <div id="glossary-terms" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Términos A -->
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="A">
+                <h3 class="text-lg font-bold text-purple-800 mb-2">Ágil (Agile)</h3>
+                <div class="space-y-2">
+                    <div class="content-placeholder h-3 w-full"></div>
+                    <div class="content-placeholder h-3 w-4/5"></div>
+                    <div class="content-placeholder h-3 w-5/6"></div>
+                </div>
+            </div>
+
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="A">
+                <h3 class="text-lg font-bold text-purple-800 mb-2">Aseguramiento de Calidad</h3>
+                <div class="space-y-2">
+                    <div class="content-placeholder h-3 w-full"></div>
+                    <div class="content-placeholder h-3 w-4/5"></div>
+                    <div class="content-placeholder h-3 w-5/6"></div>
+                </div>
+            </div>
+
+            <!-- Términos B -->
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="B">
+                <h3 class="text-lg font-bold text-purple-800 mb-2">Backlog</h3>
+                <div class="space-y-2">
+                    <div class="content-placeholder h-3 w-full"></div>
+                    <div class="content-placeholder h-3 w-4/5"></div>
+                    <div class="content-placeholder h-3 w-5/6"></div>
+                </div>
+            </div>
+
+            <!-- Términos C -->
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="C">
+                <h3 class="text-lg font-bold text-purple-800 mb-2">Control de Calidad</h3>
+                <div class="space-y-2">
+                    <div class="content-placeholder h-3 w-full"></div>
+                    <div class="content-placeholder h-3 w-4/5"></div>
+                    <div class="content-placeholder h-3 w-5/6"></div>
+                </div>
+            </div>
+
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="C">
+                <h3 class="text-lg font-bold text-purple-800 mb-2">Ciclo de Vida</h3>
+                <div class="space-y-2">
+                    <div class="content-placeholder h-3 w-full"></div>
+                    <div class="content-placeholder h-3 w-4/5"></div>
+                    <div class="content-placeholder h-3 w-5/6"></div>
+                </div>
+            </div>
+
+            <!-- Más términos placeholder -->
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="D">
+                <h3 class="text-lg font-bold text-purple-800 mb-2">Daily Scrum</h3>
+                <div class="space-y-2">
+                    <div class="content-placeholder h-3 w-full"></div>
+                    <div class="content-placeholder h-3 w-4/5"></div>
+                    <div class="content-placeholder h-3 w-5/6"></div>
+                </div>
+            </div>
+
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="K">
+                <h3 class="text-lg font-bold text-purple-800 mb-2">Kanban</h3>
+                <div class="space-y-2">
+                    <div class="content-placeholder h-3 w-full"></div>
+                    <div class="content-placeholder h-3 w-4/5"></div>
+                    <div class="content-placeholder h-3 w-5/6"></div>
+                </div>
+            </div>
+
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="S">
+                <h3 class="text-lg font-bold text-purple-800 mb-2">Sprint</h3>
+                <div class="space-y-2">
+                    <div class="content-placeholder h-3 w-full"></div>
+                    <div class="content-placeholder h-3 w-4/5"></div>
+                    <div class="content-placeholder h-3 w-5/6"></div>
+                </div>
+            </div>
+
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="S">
+                <h3 class="text-lg font-bold text-purple-800 mb-2">Scrum Master</h3>
+                <div class="space-y-2">
+                    <div class="content-placeholder h-3 w-full"></div>
+                    <div class="content-placeholder h-3 w-4/5"></div>
+                    <div class="content-placeholder h-3 w-5/6"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Sección FAQ -->
+    <section id="faq" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-6">❓</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Preguntas Frecuentes</h2>
+                <div class="content-placeholder h-4 w-80 mx-auto"></div>
+            </div>
+
+            <!-- Categorías FAQ -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button onclick="filterFAQ('general')" class="px-4 py-2 bg-blue-100 text-blue-800 rounded-lg hover:bg-blue-200 transition-colors font-medium">General</button>
+                <button onclick="filterFAQ('scrum')" class="px-4 py-2 bg-green-100 text-green-800 rounded-lg hover:bg-green-200 transition-colors font-medium">Scrum</button>
+                <button onclick="filterFAQ('kanban')" class="px-4 py-2 bg-purple-100 text-purple-800 rounded-lg hover:bg-purple-200 transition-colors font-medium">Kanban</button>
+                <button onclick="filterFAQ('calidad')" class="px-4 py-2 bg-orange-100 text-orange-800 rounded-lg hover:bg-orange-200 transition-colors font-medium">Calidad</button>
+                <button onclick="showAllFAQ()" class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 transition-colors font-medium">Todas</button>
+            </div>
+
+            <!-- Preguntas FAQ -->
+            <div class="max-w-4xl mx-auto space-y-4">
+                <!-- FAQ General -->
+                <div class="section-card rounded-xl overflow-hidden faq-item" data-category="general">
+                    <button onclick="toggleAccordion(this)" class="w-full px-6 py-4 text-left bg-blue-50 hover:bg-blue-100 transition-colors flex justify-between items-center">
+                        <span class="font-semibold text-blue-800">¿Qué es un sistema de gestión de calidad?</span>
+                        <svg class="w-5 h-5 text-blue-600 transform transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content px-6 py-0">
+                        <div class="pb-4">
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card rounded-xl overflow-hidden faq-item" data-category="general">
+                    <button onclick="toggleAccordion(this)" class="w-full px-6 py-4 text-left bg-blue-50 hover:bg-blue-100 transition-colors flex justify-between items-center">
+                        <span class="font-semibold text-blue-800">¿Cuál es la diferencia entre QA y QC?</span>
+                        <svg class="w-5 h-5 text-blue-600 transform transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content px-6 py-0">
+                        <div class="pb-4">
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Scrum -->
+                <div class="section-card rounded-xl overflow-hidden faq-item" data-category="scrum">
+                    <button onclick="toggleAccordion(this)" class="w-full px-6 py-4 text-left bg-green-50 hover:bg-green-100 transition-colors flex justify-between items-center">
+                        <span class="font-semibold text-green-800">¿Cuánto debe durar un Sprint?</span>
+                        <svg class="w-5 h-5 text-green-600 transform transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content px-6 py-0">
+                        <div class="pb-4">
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card rounded-xl overflow-hidden faq-item" data-category="scrum">
+                    <button onclick="toggleAccordion(this)" class="w-full px-6 py-4 text-left bg-green-50 hover:bg-green-100 transition-colors flex justify-between items-center">
+                        <span class="font-semibold text-green-800">¿Qué hace exactamente un Scrum Master?</span>
+                        <svg class="w-5 h-5 text-green-600 transform transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content px-6 py-0">
+                        <div class="pb-4">
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Kanban -->
+                <div class="section-card rounded-xl overflow-hidden faq-item" data-category="kanban">
+                    <button onclick="toggleAccordion(this)" class="w-full px-6 py-4 text-left bg-purple-50 hover:bg-purple-100 transition-colors flex justify-between items-center">
+                        <span class="font-semibold text-purple-800">¿Cómo se establece el límite WIP en Kanban?</span>
+                        <svg class="w-5 h-5 text-purple-600 transform transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content px-6 py-0">
+                        <div class="pb-4">
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Calidad -->
+                <div class="section-card rounded-xl overflow-hidden faq-item" data-category="calidad">
+                    <button onclick="toggleAccordion(this)" class="w-full px-6 py-4 text-left bg-orange-50 hover:bg-orange-100 transition-colors flex justify-between items-center">
+                        <span class="font-semibold text-orange-800">¿Qué es ISO 9001 y por qué es importante?</span>
+                        <svg class="w-5 h-5 text-orange-600 transform transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content px-6 py-0">
+                        <div class="pb-4">
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Enlaces de Interés -->
+    <section id="enlaces" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-6">🔗</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Enlaces de Interés</h2>
+                <div class="content-placeholder h-4 w-80 mx-auto"></div>
+            </div>
+
+            <!-- Libros Recomendados -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-green-800 mb-8 text-center">📚 Libros Recomendados</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="section-card p-6 rounded-xl card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-4xl mb-2">📖</div>
+                            <h4 class="text-lg font-bold text-green-800">Libro sobre Scrum</h4>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="content-placeholder h-3 w-full"></div>
+                            <div class="content-placeholder h-3 w-4/5"></div>
+                            <div class="content-placeholder h-3 w-5/6"></div>
+                        </div>
+                        <div class="text-center">
+                            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">Ver Más</button>
+                        </div>
+                    </div>
+
+                    <div class="section-card p-6 rounded-xl card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-4xl mb-2">📘</div>
+                            <h4 class="text-lg font-bold text-green-800">Gestión de Calidad</h4>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="content-placeholder h-3 w-full"></div>
+                            <div class="content-placeholder h-3 w-4/5"></div>
+                            <div class="content-placeholder h-3 w-5/6"></div>
+                        </div>
+                        <div class="text-center">
+                            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">Ver Más</button>
+                        </div>
+                    </div>
+
+                    <div class="section-card p-6 rounded-xl card-hover">
+                        <div class="text-center mb-4">
+                            <div class="text-4xl mb-2">📗</div>
+                            <h4 class="text-lg font-bold text-green-800">Metodologías Ágiles</h4>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="content-placeholder h-3 w-full"></div>
+                            <div class="content-placeholder h-3 w-4/5"></div>
+                            <div class="content-placeholder h-3 w-5/6"></div>
+                        </div>
+                        <div class="text-center">
+                            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">Ver Más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículos y Blogs -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-blue-800 mb-8 text-center">📰 Artículos y Blogs</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="section-card p-6 rounded-xl card-hover">
+                        <h4 class="text-lg font-bold text-blue-800 mb-3">🌐 Sitios Web Especializados</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                <div class="content-placeholder h-3 w-full"></div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card p-6 rounded-xl card-hover">
+                        <h4 class="text-lg font-bold text-blue-800 mb-3">📝 Blogs Recomendados</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                <div class="content-placeholder h-3 w-full"></div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Organizaciones y Certificaciones -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-purple-800 mb-8 text-center">🏛️ Organizaciones y Certificaciones</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="section-card p-6 rounded-xl card-hover text-center">
+                        <div class="text-4xl mb-3">🏆</div>
+                        <h4 class="text-lg font-bold text-purple-800 mb-2">Scrum Alliance</h4>
+                        <div class="space-y-2">
+                            <div class="content-placeholder h-3 w-full"></div>
+                            <div class="content-placeholder h-3 w-4/5"></div>
+                        </div>
+                    </div>
+
+                    <div class="section-card p-6 rounded-xl card-hover text-center">
+                        <div class="text-4xl mb-3">🎯</div>
+                        <h4 class="text-lg font-bold text-purple-800 mb-2">Scrum.org</h4>
+                        <div class="space-y-2">
+                            <div class="content-placeholder h-3 w-full"></div>
+                            <div class="content-placeholder h-3 w-4/5"></div>
+                        </div>
+                    </div>
+
+                    <div class="section-card p-6 rounded-xl card-hover text-center">
+                        <div class="text-4xl mb-3">🌍</div>
+                        <h4 class="text-lg font-bold text-purple-800 mb-2">ISO</h4>
+                        <div class="space-y-2">
+                            <div class="content-placeholder h-3 w-full"></div>
+                            <div class="content-placeholder h-3 w-4/5"></div>
+                        </div>
+                    </div>
+
+                    <div class="section-card p-6 rounded-xl card-hover text-center">
+                        <div class="text-4xl mb-3">⚡</div>
+                        <h4 class="text-lg font-bold text-purple-800 mb-2">Agile Alliance</h4>
+                        <div class="space-y-2">
+                            <div class="content-placeholder h-3 w-full"></div>
+                            <div class="content-placeholder h-3 w-4/5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Herramientas -->
+            <div>
+                <h3 class="text-2xl font-bold text-orange-800 mb-8 text-center">🛠️ Herramientas Recomendadas</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="section-card p-6 rounded-xl card-hover">
+                        <h4 class="text-lg font-bold text-orange-800 mb-3">📋 Gestión de Proyectos</h4>
+                        <div class="space-y-2">
+                            <div class="content-placeholder h-3 w-full"></div>
+                            <div class="content-placeholder h-3 w-4/5"></div>
+                            <div class="content-placeholder h-3 w-5/6"></div>
+                            <div class="content-placeholder h-3 w-3/4"></div>
+                        </div>
+                    </div>
+
+                    <div class="section-card p-6 rounded-xl card-hover">
+                        <h4 class="text-lg font-bold text-orange-800 mb-3">🧪 Testing y QA</h4>
+                        <div class="space-y-2">
+                            <div class="content-placeholder h-3 w-full"></div>
+                            <div class="content-placeholder h-3 w-4/5"></div>
+                            <div class="content-placeholder h-3 w-5/6"></div>
+                            <div class="content-placeholder h-3 w-3/4"></div>
+                        </div>
+                    </div>
+
+                    <div class="section-card p-6 rounded-xl card-hover">
+                        <h4 class="text-lg font-bold text-orange-800 mb-3">📊 Métricas y Análisis</h4>
+                        <div class="space-y-2">
+                            <div class="content-placeholder h-3 w-full"></div>
+                            <div class="content-placeholder h-3 w-4/5"></div>
+                            <div class="content-placeholder h-3 w-5/6"></div>
+                            <div class="content-placeholder h-3 w-3/4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Ejercicios y Casos Prácticos -->
+    <section id="ejercicios" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-6">🎯</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-orange-800 mb-4">Ejercicios y Casos Prácticos</h2>
+                <div class="content-placeholder h-4 w-80 mx-auto"></div>
+            </div>
+
+            <!-- Niveles de Dificultad -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="filterExercises('basico')" class="px-6 py-3 bg-green-100 text-green-800 rounded-lg hover:bg-green-200 transition-colors font-medium">
+                    🟢 Básico
+                </button>
+                <button onclick="filterExercises('intermedio')" class="px-6 py-3 bg-yellow-100 text-yellow-800 rounded-lg hover:bg-yellow-200 transition-colors font-medium">
+                    🟡 Intermedio
+                </button>
+                <button onclick="filterExercises('avanzado')" class="px-6 py-3 bg-red-100 text-red-800 rounded-lg hover:bg-red-200 transition-colors font-medium">
+                    🔴 Avanzado
+                </button>
+                <button onclick="showAllExercises()" class="px-6 py-3 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 transition-colors font-medium">
+                    Todos
+                </button>
+            </div>
+
+            <!-- Ejercicios Básicos -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-green-800 mb-8 text-center">🟢 Ejercicios Básicos</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="section-card p-8 rounded-xl card-hover exercise-item" data-level="basico">
+                        <div class="flex items-center mb-4">
+                            <div class="text-3xl mr-3">📋</div>
+                            <h4 class="text-xl font-bold text-green-800">Creación de Product Backlog</h4>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="content-placeholder h-4 w-full"></div>
+                            <div class="content-placeholder h-4 w-5/6"></div>
+                            <div class="content-placeholder h-4 w-4/5"></div>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg mb-4">
+                            <h5 class="font-semibold text-green-800 mb-2">Objetivos:</h5>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                        <button class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                            Comenzar Ejercicio
+                        </button>
+                    </div>
+
+                    <div class="section-card p-8 rounded-xl card-hover exercise-item" data-level="basico">
+                        <div class="flex items-center mb-4">
+                            <div class="text-3xl mr-3">📊</div>
+                            <h4 class="text-xl font-bold text-green-800">Tablero Kanban Básico</h4>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="content-placeholder h-4 w-full"></div>
+                            <div class="content-placeholder h-4 w-5/6"></div>
+                            <div class="content-placeholder h-4 w-4/5"></div>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg mb-4">
+                            <h5 class="font-semibold text-green-800 mb-2">Objetivos:</h5>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                        <button class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                            Comenzar Ejercicio
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicios Intermedios -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-yellow-800 mb-8 text-center">🟡 Ejercicios Intermedios</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="section-card p-8 rounded-xl card-hover exercise-item" data-level="intermedio">
+                        <div class="flex items-center mb-4">
+                            <div class="text-3xl mr-3">🔄</div>
+                            <h4 class="text-xl font-bold text-yellow-800">Planificación de Sprint</h4>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="content-placeholder h-4 w-full"></div>
+                            <div class="content-placeholder h-4 w-5/6"></div>
+                            <div class="content-placeholder h-4 w-4/5"></div>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                            <h5 class="font-semibold text-yellow-800 mb-2">Objetivos:</h5>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                        <button class="bg-yellow-600 text-white px-6 py-2 rounded-lg hover:bg-yellow-700 transition-colors">
+                            Comenzar Ejercicio
+                        </button>
+                    </div>
+
+                    <div class="section-card p-8 rounded-xl card-hover exercise-item" data-level="intermedio">
+                        <div class="flex items-center mb-4">
+                            <div class="text-3xl mr-3">📈</div>
+                            <h4 class="text-xl font-bold text-yellow-800">Análisis de Métricas</h4>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="content-placeholder h-4 w-full"></div>
+                            <div class="content-placeholder h-4 w-5/6"></div>
+                            <div class="content-placeholder h-4 w-4/5"></div>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                            <h5 class="font-semibold text-yellow-800 mb-2">Objetivos:</h5>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                        <button class="bg-yellow-600 text-white px-6 py-2 rounded-lg hover:bg-yellow-700 transition-colors">
+                            Comenzar Ejercicio
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Casos Prácticos Avanzados -->
+            <div>
+                <h3 class="text-2xl font-bold text-red-800 mb-8 text-center">🔴 Casos Prácticos Avanzados</h3>
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="section-card p-8 rounded-xl card-hover exercise-item" data-level="avanzado">
+                        <div class="flex items-center mb-4">
+                            <div class="text-3xl mr-3">🏢</div>
+                            <h4 class="text-xl font-bold text-red-800">Transformación Ágil Empresarial</h4>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="content-placeholder h-4 w-full"></div>
+                            <div class="content-placeholder h-4 w-5/6"></div>
+                            <div class="content-placeholder h-4 w-4/5"></div>
+                            <div class="content-placeholder h-4 w-full"></div>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg mb-6">
+                            <h5 class="font-semibold text-red-800 mb-2">Escenario:</h5>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                            </div>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg mb-4">
+                            <h5 class="font-semibold text-red-800 mb-2">Desafíos:</h5>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                        <button class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                            Analizar Caso
+                        </button>
+                    </div>
+
+                    <div class="section-card p-8 rounded-xl card-hover exercise-item" data-level="avanzado">
+                        <div class="flex items-center mb-4">
+                            <div class="text-3xl mr-3">🎯</div>
+                            <h4 class="text-xl font-bold text-red-800">Optimización de Procesos</h4>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="content-placeholder h-4 w-full"></div>
+                            <div class="content-placeholder h-4 w-5/6"></div>
+                            <div class="content-placeholder h-4 w-4/5"></div>
+                            <div class="content-placeholder h-4 w-full"></div>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg mb-6">
+                            <h5 class="font-semibold text-red-800 mb-2">Escenario:</h5>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <div class="content-placeholder h-3 w-3/4"></div>
+                            </div>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg mb-4">
+                            <h5 class="font-semibold text-red-800 mb-2">Objetivos:</h5>
+                            <div class="space-y-2">
+                                <div class="content-placeholder h-3 w-full"></div>
+                                <div class="content-placeholder h-3 w-4/5"></div>
+                                <div class="content-placeholder h-3 w-5/6"></div>
+                            </div>
+                        </div>
+                        <button class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                            Analizar Caso
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Navegación -->
+    <section class="py-16 bg-gradient-to-r from-purple-600 via-blue-600 to-green-600 text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">¡Continúa tu aprendizaje!</h2>
+            <div class="content-placeholder h-6 w-80 mx-auto mb-8"></div>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="goToHome()" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Volver al Inicio
+                </button>
+                <button onclick="alert('¡Has completado todos los recursos disponibles!')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors">
+                    Certificación
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🌟 Sistemas de gestión de calidad</h3>
+                    <div class="content-placeholder h-4 w-full mb-2"></div>
+                    <div class="content-placeholder h-4 w-3/4"></div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#glosario" class="hover:text-white transition-colors">Glosario</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#enlaces" class="hover:text-white transition-colors">Enlaces</a></li>
+                        <li><a href="#ejercicios" class="hover:text-white transition-colors">Ejercicios</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Aprendizaje</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Casos Prácticos</li>
+                        <li>Certificaciones</li>
+                        <li>Libros Recomendados</li>
+                        <li>Herramientas</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <div class="content-placeholder h-3 w-full"></div>
+                        <div class="content-placeholder h-3 w-4/5"></div>
+                        <div class="content-placeholder h-3 w-3/4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Sistemas de gestión de calidad. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad del menú móvil
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Función para scroll suave a secciones
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+
+            // Cerrar menú móvil si está abierto
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        // Función para volver al inicio
+        function goToHome() {
+            alert('Navegando de vuelta a la página de inicio...');
+        }
+
+        // Funcionalidad del acordeón FAQ
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.accordion-icon');
+
+            // Cerrar otros acordeones
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item !== content) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Toggle del acordeón actual
+            content.classList.toggle('active');
+
+            if (content.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Filtros del glosario
+        function filterGlossary(letter) {
+            const terms = document.querySelectorAll('.glossary-term');
+            terms.forEach(term => {
+                if (term.dataset.letter === letter) {
+                    term.style.display = 'block';
+                } else {
+                    term.style.display = 'none';
+                }
+            });
+        }
+
+        function showAllGlossary() {
+            const terms = document.querySelectorAll('.glossary-term');
+            terms.forEach(term => {
+                term.style.display = 'block';
+            });
+        }
+
+        // Buscador del glosario
+        document.getElementById('search-glossary').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const terms = document.querySelectorAll('.glossary-term');
+
+            terms.forEach(term => {
+                const title = term.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    term.style.display = 'block';
+                } else {
+                    term.style.display = 'none';
+                }
+            });
+        });
+
+        // Filtros FAQ
+        function filterFAQ(category) {
+            const items = document.querySelectorAll('.faq-item');
+            items.forEach(item => {
+                if (item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function showAllFAQ() {
+            const items = document.querySelectorAll('.faq-item');
+            items.forEach(item => {
+                item.style.display = 'block';
+            });
+        }
+
+        // Filtros de ejercicios
+        function filterExercises(level) {
+            const exercises = document.querySelectorAll('.exercise-item');
+            exercises.forEach(exercise => {
+                if (exercise.dataset.level === level) {
+                    exercise.style.display = 'block';
+                } else {
+                    exercise.style.display = 'none';
+                }
+            });
+        }
+
+        function showAllExercises() {
+            const exercises = document.querySelectorAll('.exercise-item');
+            exercises.forEach(exercise => {
+                exercise.style.display = 'block';
+            });
+        }
+
+        // Navegación suave para enlaces del menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+
+        // Efecto de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animaciones
+        document.querySelectorAll('.card-hover').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Observar secciones principales
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <script>
+        (function() {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.innerHTML = "window.__CF$cv$params={r:'97873837f1681f0d',t:'MTc1Njc1NTQxOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

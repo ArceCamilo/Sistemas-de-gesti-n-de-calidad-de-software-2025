@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Tu Sitio Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="pantalla1.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navegación -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-gray-800">🌟 Sistemas de gestión de calidad</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="pantalla1.html" class="bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
+                        <a href="pantalla6.html" class="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Nosotros</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-indigo-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#inicio" class="bg-blue-600 text-white block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#servicios" class="text-gray-600 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Servicios</a>
+                <a href="#nosotros" class="text-gray-600 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Nosotros</a>
+                <a href="#contacto" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Bienvenido a Nuestro Sitio
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-indigo-100 max-w-4xl mx-auto">
+                    Este sitio tiene como objetivo enseñar los fundamentos de la calidad en el desarrollo de software. Proporciona conceptos clave, metodologías, ejemplos prácticos y recursos interactivos que facilitan a estudiantes y profesionales la comprensión de cómo
+                    desarrollar software confiable y eficiente, promoviendo así las mejores prácticas en la gestión de la calidad.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Características Principales -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Áreas de Conocimiento</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Explora los principales temas que cubrimos para el desarrollo de software de calidad
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+                <div class="text-center card-hover bg-blue-50 border-l-4 border-blue-500 p-6 rounded-xl">
+                    <div class="text-4xl mb-4">⚙️</div>
+                    <h3 class="text-lg font-semibold text-blue-800 mb-3">Gestión de la Calidad del Software</h3>
+                    <p class="text-blue-600 text-sm">
+                        Principios y técnicas para asegurar la calidad en cada etapa del desarrollo
+                    </p>
+                </div>
+
+                <div class="text-center card-hover bg-orange-50 border-l-4 border-orange-500 p-6 rounded-xl">
+                    <div class="text-4xl mb-4">🔄</div>
+                    <h3 class="text-lg font-semibold text-orange-800 mb-3">Procesos de Desarrollo de Software</h3>
+                    <p class="text-orange-600 text-sm">
+                        Metodologías y procesos estructurados para el desarrollo eficiente
+                    </p>
+                </div>
+
+                <div class="text-center card-hover bg-green-50 border-l-4 border-green-500 p-6 rounded-xl">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h3 class="text-lg font-semibold text-green-800 mb-3">Funcionalidad Adicional JavaScript</h3>
+                    <p class="text-green-600 text-sm">
+                        Herramientas interactivas y funcionalidades avanzadas con JavaScript
+                    </p>
+                </div>
+
+                <div class="text-center card-hover bg-blue-50 border-l-4 border-blue-500 p-6 rounded-xl">
+                    <div class="text-4xl mb-4">🏃‍♂️</div>
+                    <h3 class="text-lg font-semibold text-blue-800 mb-3">Metodologías Ágiles</h3>
+                    <p class="text-blue-600 text-sm">
+                        Enfoques ágiles para el desarrollo de software de calidad
+                    </p>
+                </div>
+
+                <div class="text-center card-hover bg-orange-50 border-l-4 border-orange-500 p-6 rounded-xl">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h3 class="text-lg font-semibold text-orange-800 mb-3">Recursos y Aprendizaje</h3>
+                    <p class="text-orange-600 text-sm">
+                        Materiales educativos y herramientas para el aprendizaje continuo
+                    </p>
+                </div>
+
+                <div class="text-center card-hover bg-green-50 border-l-4 border-green-500 p-6 rounded-xl">
+                    <div class="text-4xl mb-4">👥</div>
+                    <h3 class="text-lg font-semibold text-green-800 mb-3">Sobre Nosotros</h3>
+                    <p class="text-green-600 text-sm">
+                        Conoce nuestro equipo y nuestra misión educativa
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Acceso Rápido -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Acceso Rápido</h2>
+                <p class="text-lg text-gray-600">
+                    Navega fácilmente a las secciones más importantes de nuestro sitio
+                </p>
+            </div>
+
+            <div class="flex justify-center">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl justify-items-center">
+                    <a href="pantalla6.html" class="card-hover bg-white p-6 rounded-xl text-center group block w-72">
+                        <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">👥</div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Nosotros</h3>
+                        <p class="text-sm text-gray-600">Conoce nuestro equipo y nuestra historia</p>
+                    </a>
+
+                    <a href="pantalla6.html#contacto" class="card-hover bg-white p-6 rounded-xl text-center group block w-72">
+                        <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">📞</div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Contacto</h3>
+                        <p class="text-sm text-gray-600">Ponte en contacto con nosotros</p>
+                    </a>
+
+                    <a href="pantalla5.html" class="card-hover bg-white p-6 rounded-xl text-center group block w-72">
+                        <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">📝</div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Glosario</h3>
+                        <p class="text-sm text-gray-600">Explora todos los términos y definiciones</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Llamada a la Acción -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 via-green-600 to-orange-500 text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Listo para comenzar?</h2>
+            <p class="text-xl mb-8 text-blue-100">
+                Únete a miles de estudiantes que ya confían en nuestro contenido educativo
+            </p>
+            <a href="pantalla2.html" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block">
+                Comienza Ahora
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🌟 Sistemas de gestión de calidad</h3>
+                    <p class="text-gray-400">
+                        Tu socio confiable para soluciones digitales innovadoras
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="pantalla1.html" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="pantalla6.html" class="hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="pantalla6.html#contacto" class="hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Desarrollo Web</li>
+                        <li>Diseño UX/UI</li>
+                        <li>Consultoría</li>
+                        <li>Soporte Técnico</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>📧 info@misitio.com</p>
+                        <p>📱 +1 (555) 123-4567</p>
+                        <p>📍 Ciudad, País</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Sistemas de gestión de calidad. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</html>
