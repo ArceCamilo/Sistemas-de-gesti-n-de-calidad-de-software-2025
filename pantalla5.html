@@ -2,6 +2,63 @@
 <html lang="es">
 
 <head>
+    <style>
+        .glossary-modal-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(80,0,120,0.12);
+            z-index: 9998;
+        }
+        .glossary-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #f3e8ff;
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px rgba(80,0,120,0.18);
+            z-index: 9999;
+            max-width: 90vw;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2.5rem 2rem 2rem 2rem;
+            display: none;
+        }
+        .glossary-modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            background: #a78bfa;
+            color: white;
+            border: none;
+            border-radius: 999px;
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        .glossary-term {
+            cursor: pointer;
+            transition: box-shadow 0.2s;
+        }
+        .glossary-term.expanded {
+            box-shadow: 0 8px 32px rgba(80,0,120,0.18);
+            background: #f3e8ff;
+        }
+        .glossary-extra {
+            display: none;
+            margin-top: 1rem;
+            color: #7c3aed;
+        }
+        .glossary-term.expanded .glossary-extra {
+            display: block;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recursos y Aprendizaje - Sistemas de gestión de calidad</title>
@@ -10,6 +67,8 @@
 </head>
 
 <body class="bg-gray-50">
+    <div id="glossary-modal-bg" class="glossary-modal-bg" style="display:none;"></div>
+    <div id="glossary-modal" class="glossary-modal"></div>
     <!-- Navegación -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,17 +98,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Menú móvil -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#" onclick="goToHome()" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
-                <a href="#gestion-calidad" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Gestión de Calidad</a>
-                <a href="#procesos" class="text-gray-600 hover:text-orange-600 block px-3 py-2 rounded-md text-base font-medium">Procesos</a>
-                <a href="#metodologias" class="text-gray-600 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Metodologías</a>
-                <a href="#recursos" class="bg-purple-600 text-white block px-3 py-2 rounded-md text-base font-medium">Recursos</a>
-            </div>
-        </div>
     </nav>
 
     <!-- Sección Hero -->
@@ -60,7 +108,6 @@
                 <h1 class="text-4xl md:text-6xl font-bold mb-6">
                     Recursos y Aprendizaje
                 </h1>
-                <div class="content-placeholder h-6 w-96 mx-auto mb-8"></div>
                 <div class="flex flex-wrap justify-center gap-4">
                     <button onclick="scrollToSection('glosario')" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors">
                         Explorar Glosario
@@ -79,7 +126,7 @@
             <div class="text-center mb-12">
                 <div class="text-6xl mb-6">📖</div>
                 <h2 class="text-3xl md:text-4xl font-bold text-purple-800 mb-4">Glosario de Términos</h2>
-                <div class="content-placeholder h-4 w-80 mx-auto mb-8"></div>
+                
 
                 <!-- Buscador -->
                 <div class="max-w-md mx-auto">
@@ -100,88 +147,61 @@
         <!-- Términos del Glosario -->
         <div id="glossary-terms" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Términos A -->
-            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="A">
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" style="background:white; box-shadow: 0 4px 24px 0 rgba(168,139,250,0.7);" data-letter="A" data-glossary="agil">
                 <h3 class="text-lg font-bold text-purple-800 mb-2">Ágil (Agile)</h3>
-                <div class="space-y-2">
-                    <div class="content-placeholder h-3 w-full"></div>
-                    <div class="content-placeholder h-3 w-4/5"></div>
-                    <div class="content-placeholder h-3 w-5/6"></div>
-                </div>
+                <p class="text-gray-700">Conjunto de metodologías de desarrollo de software que promueven la entrega rápida, la colaboración y la adaptación continua a los cambios.</p>
+                <p class="text-gray-500 text-sm">Ejemplo: Scrum y Kanban son metodologías ágiles.</p>
             </div>
 
-            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="A">
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" style="background:white; box-shadow: 0 4px 24px 0 rgba(34,197,94,0.7);" data-letter="A">
                 <h3 class="text-lg font-bold text-purple-800 mb-2">Aseguramiento de Calidad</h3>
-                <div class="space-y-2">
-                    <div class="content-placeholder h-3 w-full"></div>
-                    <div class="content-placeholder h-3 w-4/5"></div>
-                    <div class="content-placeholder h-3 w-5/6"></div>
-                </div>
+                <p class="text-gray-700">Conjunto de actividades planificadas y sistemáticas implementadas en un sistema de calidad para asegurar que los requisitos de calidad se cumplan.</p>
+                <p class="text-gray-500 text-sm">Incluye auditorías, revisiones y procesos de mejora continua.</p>
             </div>
 
             <!-- Términos B -->
-            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="B">
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" style="background:white; box-shadow: 0 4px 24px 0 rgba(59,130,246,0.7);" data-letter="B">
                 <h3 class="text-lg font-bold text-purple-800 mb-2">Backlog</h3>
-                <div class="space-y-2">
-                    <div class="content-placeholder h-3 w-full"></div>
-                    <div class="content-placeholder h-3 w-4/5"></div>
-                    <div class="content-placeholder h-3 w-5/6"></div>
-                </div>
+                <p class="text-gray-700">Lista priorizada de tareas, historias o requisitos pendientes por realizar en un proyecto ágil.</p>
+                <p class="text-gray-500 text-sm">El Product Owner es responsable de mantener el backlog actualizado.</p>
             </div>
 
             <!-- Términos C -->
-            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="C">
-                <h3 class="text-lg font-bold text-purple-800 mb-2">Control de Calidad</h3>
-                <div class="space-y-2">
-                    <div class="content-placeholder h-3 w-full"></div>
-                    <div class="content-placeholder h-3 w-4/5"></div>
-                    <div class="content-placeholder h-3 w-5/6"></div>
-                </div>
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" style="background:white; box-shadow: 0 4px 24px 0 rgba(37,99,235,0.7);" data-letter="C">
+                <h3 class="text-lg font-bold text-blue-800 mb-2">Control de Calidad</h3>
+                <p class="text-gray-700">Proceso orientado a verificar que los productos o servicios cumplen con los requisitos de calidad establecidos.</p>
+                <p class="text-gray-500 text-sm">Incluye inspecciones, pruebas y validaciones.</p>
             </div>
 
-            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="C">
-                <h3 class="text-lg font-bold text-purple-800 mb-2">Ciclo de Vida</h3>
-                <div class="space-y-2">
-                    <div class="content-placeholder h-3 w-full"></div>
-                    <div class="content-placeholder h-3 w-4/5"></div>
-                    <div class="content-placeholder h-3 w-5/6"></div>
-                </div>
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" style="background:white; box-shadow: 0 4px 24px 0 rgba(34,197,94,0.7);" data-letter="C">
+                <h3 class="text-lg font-bold text-green-800 mb-2">Ciclo de Vida</h3>
+                <p class="text-gray-700">Etapas por las que pasa un producto o proyecto desde su inicio hasta su finalización o retiro.</p>
+                <p class="text-gray-500 text-sm">Ejemplo: análisis, diseño, desarrollo, pruebas, implementación y mantenimiento.</p>
             </div>
 
             <!-- Más términos placeholder -->
-            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="D">
-                <h3 class="text-lg font-bold text-purple-800 mb-2">Daily Scrum</h3>
-                <div class="space-y-2">
-                    <div class="content-placeholder h-3 w-full"></div>
-                    <div class="content-placeholder h-3 w-4/5"></div>
-                    <div class="content-placeholder h-3 w-5/6"></div>
-                </div>
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" style="background:white; box-shadow: 0 4px 24px 0 rgba(250,204,21,0.7);" data-letter="D">
+                <h3 class="text-lg font-bold text-yellow-800 mb-2">Daily Scrum</h3>
+                <p class="text-gray-700">Reunión diaria breve donde el equipo revisa el progreso, planifica el día y detecta obstáculos.</p>
+                <p class="text-gray-500 text-sm">Dura 15 minutos y cada miembro responde tres preguntas clave.</p>
             </div>
 
-            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="K">
-                <h3 class="text-lg font-bold text-purple-800 mb-2">Kanban</h3>
-                <div class="space-y-2">
-                    <div class="content-placeholder h-3 w-full"></div>
-                    <div class="content-placeholder h-3 w-4/5"></div>
-                    <div class="content-placeholder h-3 w-5/6"></div>
-                </div>
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" style="background:white; box-shadow: 0 4px 24px 0 rgba(6,182,212,0.7);" data-letter="K">
+                <h3 class="text-lg font-bold text-cyan-800 mb-2">Kanban</h3>
+                <p class="text-gray-700">Metodología ágil que utiliza tableros visuales para gestionar el flujo de trabajo y promover la mejora continua.</p>
+                <p class="text-gray-500 text-sm">Permite limitar el trabajo en curso y visualizar el estado de cada tarea.</p>
             </div>
 
-            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="S">
-                <h3 class="text-lg font-bold text-purple-800 mb-2">Sprint</h3>
-                <div class="space-y-2">
-                    <div class="content-placeholder h-3 w-full"></div>
-                    <div class="content-placeholder h-3 w-4/5"></div>
-                    <div class="content-placeholder h-3 w-5/6"></div>
-                </div>
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" style="background:white; box-shadow: 0 4px 24px 0 rgba(236,72,153,0.7);" data-letter="S">
+                <h3 class="text-lg font-bold text-pink-800 mb-2">Sprint</h3>
+                <p class="text-gray-700">Periodo de tiempo fijo en Scrum donde el equipo trabaja para completar tareas seleccionadas del backlog.</p>
+                <p class="text-gray-500 text-sm">Generalmente dura entre 1 y 4 semanas.</p>
             </div>
 
-            <div class="section-card p-6 rounded-xl card-hover glossary-term" data-letter="S">
-                <h3 class="text-lg font-bold text-purple-800 mb-2">Scrum Master</h3>
-                <div class="space-y-2">
-                    <div class="content-placeholder h-3 w-full"></div>
-                    <div class="content-placeholder h-3 w-4/5"></div>
-                    <div class="content-placeholder h-3 w-5/6"></div>
-                </div>
+            <div class="section-card p-6 rounded-xl card-hover glossary-term" style="background:white; box-shadow: 0 4px 24px 0 rgba(99,102,241,0.7);" data-letter="S">
+                <h3 class="text-lg font-bold text-indigo-800 mb-2">Scrum Master</h3>
+                <p class="text-gray-700">Persona responsable de facilitar el proceso Scrum, eliminar impedimentos y ayudar al equipo a seguir las prácticas ágiles.</p>
+                <p class="text-gray-500 text-sm">No es jefe, sino guía y facilitador.</p>
             </div>
         </div>
         </div>
@@ -193,7 +213,6 @@
             <div class="text-center mb-12">
                 <div class="text-6xl mb-6">❓</div>
                 <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Preguntas Frecuentes</h2>
-                <div class="content-placeholder h-4 w-80 mx-auto"></div>
             </div>
 
             <!-- Categorías FAQ -->
@@ -218,10 +237,7 @@
                     <div class="accordion-content px-6 py-0">
                         <div class="pb-4">
                             <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
-                                <div class="content-placeholder h-3 w-3/4"></div>
+                                <p>Un sistema de gestión de calidad es un conjunto de políticas, procesos y procedimientos necesarios para planificar y ejecutar (producción/desarrollo/servicio) en las áreas principales de una organización. Permite asegurar que los productos o servicios cumplen con los requisitos de calidad y promueve la mejora continua.</p>
                             </div>
                         </div>
                     </div>
@@ -237,9 +253,7 @@
                     <div class="accordion-content px-6 py-0">
                         <div class="pb-4">
                             <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <p><b>QA (Aseguramiento de Calidad)</b> se enfoca en los procesos y actividades para prevenir defectos y asegurar que el desarrollo se realice correctamente. <b>QC (Control de Calidad)</b> se centra en la inspección y verificación del producto final para detectar y corregir defectos.</p>
                             </div>
                         </div>
                     </div>
@@ -256,9 +270,7 @@
                     <div class="accordion-content px-6 py-0">
                         <div class="pb-4">
                             <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <p>Un Sprint suele durar entre 1 y 4 semanas, dependiendo de las necesidades del equipo y el proyecto. Lo más común es que dure 2 semanas.</p>
                             </div>
                         </div>
                     </div>
@@ -274,9 +286,7 @@
                     <div class="accordion-content px-6 py-0">
                         <div class="pb-4">
                             <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <p>El Scrum Master es responsable de facilitar el proceso Scrum, ayudar al equipo a eliminar obstáculos, promover la colaboración y asegurar que se sigan las prácticas ágiles. No es jefe, sino guía y facilitador.</p>
                             </div>
                         </div>
                     </div>
@@ -293,9 +303,7 @@
                     <div class="accordion-content px-6 py-0">
                         <div class="pb-4">
                             <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <p>El límite WIP (Work In Progress) se define según la capacidad del equipo y el tipo de trabajo. Se recomienda establecerlo en base a la experiencia y ajustarlo para evitar sobrecarga y mejorar el flujo de trabajo.</p>
                             </div>
                         </div>
                     </div>
@@ -312,9 +320,7 @@
                     <div class="accordion-content px-6 py-0">
                         <div class="pb-4">
                             <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
+                                <p>ISO 9001 es una norma internacional que establece los requisitos para un sistema de gestión de calidad. Es importante porque ayuda a las organizaciones a mejorar sus procesos, aumentar la satisfacción del cliente y acceder a nuevos mercados.</p>
                             </div>
                         </div>
                     </div>
@@ -329,7 +335,7 @@
             <div class="text-center mb-12">
                 <div class="text-6xl mb-6">🔗</div>
                 <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Enlaces de Interés</h2>
-                <div class="content-placeholder h-4 w-80 mx-auto"></div>
+                
             </div>
 
             <!-- Libros Recomendados -->
@@ -339,174 +345,67 @@
                     <div class="section-card p-6 rounded-xl card-hover">
                         <div class="text-center mb-4">
                             <div class="text-4xl mb-2">📖</div>
-                            <h4 class="text-lg font-bold text-green-800">Libro sobre Scrum</h4>
+                            <h4 class="text-lg font-bold text-green-800">Clean Code</h4>
                         </div>
-                        <div class="space-y-2 mb-4">
-                            <div class="content-placeholder h-3 w-full"></div>
-                            <div class="content-placeholder h-3 w-4/5"></div>
-                            <div class="content-placeholder h-3 w-5/6"></div>
-                        </div>
-                        <div class="text-center">
-                            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">Ver Más</button>
-                        </div>
+                        <p class="mb-2 text-gray-700">Robert C. Martin – Guía de buenas prácticas para escribir código limpio y mantenible.</p>
                     </div>
-
                     <div class="section-card p-6 rounded-xl card-hover">
                         <div class="text-center mb-4">
-                            <div class="text-4xl mb-2">📘</div>
-                            <h4 class="text-lg font-bold text-green-800">Gestión de Calidad</h4>
+                            <div class="text-4xl mb-2">📖</div>
+                            <h4 class="text-lg font-bold text-green-800">Agile Software Development with Scrum</h4>
                         </div>
-                        <div class="space-y-2 mb-4">
-                            <div class="content-placeholder h-3 w-full"></div>
-                            <div class="content-placeholder h-3 w-4/5"></div>
-                            <div class="content-placeholder h-3 w-5/6"></div>
-                        </div>
-                        <div class="text-center">
-                            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">Ver Más</button>
-                        </div>
+                        <p class="mb-2 text-gray-700">Ken Schwaber – Libro de referencia para entender Scrum y metodologías ágiles.</p>
                     </div>
-
                     <div class="section-card p-6 rounded-xl card-hover">
                         <div class="text-center mb-4">
-                            <div class="text-4xl mb-2">📗</div>
-                            <h4 class="text-lg font-bold text-green-800">Metodologías Ágiles</h4>
+                            <div class="text-4xl mb-2">📖</div>
+                            <h4 class="text-lg font-bold text-green-800">Continuous Delivery</h4>
                         </div>
-                        <div class="space-y-2 mb-4">
-                            <div class="content-placeholder h-3 w-full"></div>
-                            <div class="content-placeholder h-3 w-4/5"></div>
-                            <div class="content-placeholder h-3 w-5/6"></div>
-                        </div>
-                        <div class="text-center">
-                            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">Ver Más</button>
-                        </div>
+                        <p class="mb-2 text-gray-700">Jez Humble y David Farley – Estrategias de integración y entrega continua.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Artículos y Blogs -->
+            <!-- Artículos y Tutoriales -->
             <div class="mb-16">
-                <h3 class="text-2xl font-bold text-blue-800 mb-8 text-center">📰 Artículos y Blogs</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="section-card p-6 rounded-xl card-hover">
-                        <h4 class="text-lg font-bold text-blue-800 mb-3">🌐 Sitios Web Especializados</h4>
-                        <div class="space-y-3">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                                <div class="content-placeholder h-3 w-full"></div>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                                <div class="content-placeholder h-3 w-3/4"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section-card p-6 rounded-xl card-hover">
-                        <h4 class="text-lg font-bold text-blue-800 mb-3">📝 Blogs Recomendados</h4>
-                        <div class="space-y-3">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                                <div class="content-placeholder h-3 w-full"></div>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                                <div class="content-placeholder h-3 w-3/4"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Organizaciones y Certificaciones -->
-            <div class="mb-16">
-                <h3 class="text-2xl font-bold text-purple-800 mb-8 text-center">🏛️ Organizaciones y Certificaciones</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="section-card p-6 rounded-xl card-hover text-center">
-                        <div class="text-4xl mb-3">🏆</div>
-                        <h4 class="text-lg font-bold text-purple-800 mb-2">Scrum Alliance</h4>
-                        <div class="space-y-2">
-                            <div class="content-placeholder h-3 w-full"></div>
-                            <div class="content-placeholder h-3 w-4/5"></div>
-                        </div>
-                    </div>
-
-                    <div class="section-card p-6 rounded-xl card-hover text-center">
-                        <div class="text-4xl mb-3">🎯</div>
-                        <h4 class="text-lg font-bold text-purple-800 mb-2">Scrum.org</h4>
-                        <div class="space-y-2">
-                            <div class="content-placeholder h-3 w-full"></div>
-                            <div class="content-placeholder h-3 w-4/5"></div>
-                        </div>
-                    </div>
-
-                    <div class="section-card p-6 rounded-xl card-hover text-center">
-                        <div class="text-4xl mb-3">🌍</div>
-                        <h4 class="text-lg font-bold text-purple-800 mb-2">ISO</h4>
-                        <div class="space-y-2">
-                            <div class="content-placeholder h-3 w-full"></div>
-                            <div class="content-placeholder h-3 w-4/5"></div>
-                        </div>
-                    </div>
-
-                    <div class="section-card p-6 rounded-xl card-hover text-center">
-                        <div class="text-4xl mb-3">⚡</div>
-                        <h4 class="text-lg font-bold text-purple-800 mb-2">Agile Alliance</h4>
-                        <div class="space-y-2">
-                            <div class="content-placeholder h-3 w-full"></div>
-                            <div class="content-placeholder h-3 w-4/5"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Herramientas -->
-            <div>
-                <h3 class="text-2xl font-bold text-orange-800 mb-8 text-center">🛠️ Herramientas Recomendadas</h3>
+                <h3 class="text-2xl font-bold text-blue-800 mb-8 text-center">📰 Artículos y Tutoriales</h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="section-card p-6 rounded-xl card-hover">
-                        <h4 class="text-lg font-bold text-orange-800 mb-3">📋 Gestión de Proyectos</h4>
-                        <div class="space-y-2">
-                            <div class="content-placeholder h-3 w-full"></div>
-                            <div class="content-placeholder h-3 w-4/5"></div>
-                            <div class="content-placeholder h-3 w-5/6"></div>
-                            <div class="content-placeholder h-3 w-3/4"></div>
-                        </div>
+                        <h4 class="text-lg font-bold text-blue-800 mb-2">Scrum Guides</h4>
+                        <p class="mb-2 text-gray-700">Explicación detallada del marco de trabajo de Scrum.</p>
+                        <a href="https://scrumguides.org/" target="_blank" class="text-blue-600 underline">scrumguides.org</a>
                     </div>
-
                     <div class="section-card p-6 rounded-xl card-hover">
-                        <h4 class="text-lg font-bold text-orange-800 mb-3">🧪 Testing y QA</h4>
-                        <div class="space-y-2">
-                            <div class="content-placeholder h-3 w-full"></div>
-                            <div class="content-placeholder h-3 w-4/5"></div>
-                            <div class="content-placeholder h-3 w-5/6"></div>
-                            <div class="content-placeholder h-3 w-3/4"></div>
-                        </div>
+                        <h4 class="text-lg font-bold text-blue-800 mb-2">Kanban Resources</h4>
+                        <p class="mb-2 text-gray-700">Recursos y guías sobre la metodología Kanban.</p>
+                        <a href="https://businessmap.io/kanban-resources/getting-started/what-is-kanban" target="_blank" class="text-blue-600 underline">businessmap.io</a>
                     </div>
-
                     <div class="section-card p-6 rounded-xl card-hover">
-                        <h4 class="text-lg font-bold text-orange-800 mb-3">📊 Métricas y Análisis</h4>
-                        <div class="space-y-2">
-                            <div class="content-placeholder h-3 w-full"></div>
-                            <div class="content-placeholder h-3 w-4/5"></div>
-                            <div class="content-placeholder h-3 w-5/6"></div>
-                            <div class="content-placeholder h-3 w-3/4"></div>
-                        </div>
+                        <h4 class="text-lg font-bold text-blue-800 mb-2">Software Testing Help</h4>
+                        <p class="mb-2 text-gray-700">Tutoriales y artículos sobre aseguramiento y control de calidad.</p>
+                        <a href="https://www.softwaretestinghelp.com/" target="_blank" class="text-blue-600 underline">softwaretestinghelp.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Organizaciones y Estándares -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-purple-800 mb-8 text-center">🏛️ Organizaciones y Estándares</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="section-card p-6 rounded-xl card-hover">
+                        <h4 class="text-lg font-bold text-purple-800 mb-2">ISO</h4>
+                        <p class="mb-2 text-gray-700">Normas internacionales, incluyendo ISO 9001 para gestión de calidad.</p>
+                        <a href="https://www.iso.org/home.html" target="_blank" class="text-purple-600 underline">iso.org</a>
+                    </div>
+                    <div class="section-card p-6 rounded-xl card-hover">
+                        <h4 class="text-lg font-bold text-purple-800 mb-2">Scrum Alliance</h4>
+                        <p class="mb-2 text-gray-700">Comunidad y certificaciones oficiales de Scrum.</p>
+                        <a href="https://www.scrumalliance.org/" target="_blank" class="text-purple-600 underline">scrumalliance.org</a>
+                    </div>
+                    <div class="section-card p-6 rounded-xl card-hover">
+                        <h4 class="text-lg font-bold text-purple-800 mb-2">Agile Alliance</h4>
+                        <p class="mb-2 text-gray-700">Recursos, conferencias y artículos sobre metodologías ágiles.</p>
+                        <a href="https://agilealliance.org/" target="_blank" class="text-purple-600 underline">agilealliance.org</a>
                     </div>
                 </div>
             </div>
@@ -544,48 +443,50 @@
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="section-card p-8 rounded-xl card-hover exercise-item" data-level="basico">
                         <div class="flex items-center mb-4">
-                            <div class="text-3xl mr-3">📋</div>
-                            <h4 class="text-xl font-bold text-green-800">Creación de Product Backlog</h4>
+                            <div class="text-3xl mr-3">🔄</div>
+                            <h4 class="text-xl font-bold text-green-800">Planificación de Sprint</h4>
                         </div>
                         <div class="space-y-3 mb-6">
-                            <div class="content-placeholder h-4 w-full"></div>
-                            <div class="content-placeholder h-4 w-5/6"></div>
-                            <div class="content-placeholder h-4 w-4/5"></div>
+                            <p>Simula una reunión de planificación de Sprint. Selecciona tareas del backlog y define el objetivo del Sprint. Estima el esfuerzo de cada tarea usando la técnica de Planning Poker.</p>
                         </div>
+                        <form onsubmit="saveExerciseAnswer(event, 'sprint_basico')" class="mb-4">
+                            <label class="block mb-2 font-semibold text-green-800">Describe tu planificación de Sprint:</label>
+                            <textarea id="exercise-sprint_basico" rows="5" class="w-full p-3 border rounded-lg mb-2" placeholder="Escribe aquí tu planificación..."></textarea>
+                            <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">Guardar Respuesta</button>
+                            <span id="saved-sprint_basico" class="text-green-700 font-semibold ml-3" style="display:none;">¡Respuesta guardada!</span>
+                        </form>
                         <div class="bg-green-50 p-4 rounded-lg mb-4">
                             <h5 class="font-semibold text-green-800 mb-2">Objetivos:</h5>
-                            <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
-                            </div>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li>Definir objetivos claros para el Sprint.</li>
+                                <li>Practicar la estimación colaborativa.</li>
+                                <li>Comprender el proceso de planificación en Scrum.</li>
+                            </ul>
                         </div>
-                        <button class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
-                            Comenzar Ejercicio
-                        </button>
                     </div>
 
                     <div class="section-card p-8 rounded-xl card-hover exercise-item" data-level="basico">
                         <div class="flex items-center mb-4">
-                            <div class="text-3xl mr-3">📊</div>
-                            <h4 class="text-xl font-bold text-green-800">Tablero Kanban Básico</h4>
+                            <div class="text-3xl mr-3">📋</div>
+                            <h4 class="text-xl font-bold text-green-800">Creación de Product Backlog</h4>
                         </div>
                         <div class="space-y-3 mb-6">
-                            <div class="content-placeholder h-4 w-full"></div>
-                            <div class="content-placeholder h-4 w-5/6"></div>
-                            <div class="content-placeholder h-4 w-4/5"></div>
+                            <p>Imagina que eres el Product Owner de una aplicación móvil para gestión de tareas. Enumera al menos 5 historias de usuario para el backlog inicial.</p>
                         </div>
+                        <form onsubmit="saveExerciseAnswer(event, 'backlog')" class="mb-4">
+                            <label class="block mb-2 font-semibold text-green-800">Tus historias de usuario:</label>
+                            <textarea id="exercise-backlog" rows="5" class="w-full p-3 border rounded-lg mb-2" placeholder="Escribe aquí tus historias..."></textarea>
+                            <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">Guardar Respuesta</button>
+                            <span id="saved-backlog" class="text-green-700 font-semibold ml-3" style="display:none;">¡Respuesta guardada!</span>
+                        </form>
                         <div class="bg-green-50 p-4 rounded-lg mb-4">
                             <h5 class="font-semibold text-green-800 mb-2">Objetivos:</h5>
-                            <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
-                            </div>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li>Identificar historias de usuario relevantes.</li>
+                                <li>Priorizar tareas según valor para el usuario.</li>
+                                <li>Comprender la estructura de un backlog ágil.</li>
+                            </ul>
                         </div>
-                        <button class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
-                            Comenzar Ejercicio
-                        </button>
                     </div>
                 </div>
             </div>
@@ -596,25 +497,26 @@
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="section-card p-8 rounded-xl card-hover exercise-item" data-level="intermedio">
                         <div class="flex items-center mb-4">
-                            <div class="text-3xl mr-3">🔄</div>
-                            <h4 class="text-xl font-bold text-yellow-800">Planificación de Sprint</h4>
+                            <div class="text-3xl mr-3">📊</div>
+                            <h4 class="text-xl font-bold text-yellow-800">Tablero Kanban Básico</h4>
                         </div>
                         <div class="space-y-3 mb-6">
-                            <div class="content-placeholder h-4 w-full"></div>
-                            <div class="content-placeholder h-4 w-5/6"></div>
-                            <div class="content-placeholder h-4 w-4/5"></div>
+                            <p>Crea un tablero Kanban simple con las columnas: "Por hacer", "En progreso" y "Hecho". Agrega al menos 5 tareas y muévelas entre las columnas según su estado.</p>
                         </div>
+                        <form onsubmit="saveExerciseAnswer(event, 'kanban_intermedio')" class="mb-4">
+                            <label class="block mb-2 font-semibold text-yellow-800">Describe tu tablero Kanban y tareas:</label>
+                            <textarea id="exercise-kanban_intermedio" rows="5" class="w-full p-3 border rounded-lg mb-2" placeholder="Describe tu tablero y tareas..."></textarea>
+                            <button type="submit" class="bg-yellow-600 text-white px-6 py-2 rounded-lg hover:bg-yellow-700 transition-colors">Guardar Respuesta</button>
+                            <span id="saved-kanban_intermedio" class="text-yellow-700 font-semibold ml-3" style="display:none;">¡Respuesta guardada!</span>
+                        </form>
                         <div class="bg-yellow-50 p-4 rounded-lg mb-4">
                             <h5 class="font-semibold text-yellow-800 mb-2">Objetivos:</h5>
-                            <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
-                            </div>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li>Visualizar el flujo de trabajo.</li>
+                                <li>Comprender el uso de límites WIP.</li>
+                                <li>Aplicar la metodología Kanban en un ejemplo práctico.</li>
+                            </ul>
                         </div>
-                        <button class="bg-yellow-600 text-white px-6 py-2 rounded-lg hover:bg-yellow-700 transition-colors">
-                            Comenzar Ejercicio
-                        </button>
                     </div>
 
                     <div class="section-card p-8 rounded-xl card-hover exercise-item" data-level="intermedio">
@@ -623,21 +525,22 @@
                             <h4 class="text-xl font-bold text-yellow-800">Análisis de Métricas</h4>
                         </div>
                         <div class="space-y-3 mb-6">
-                            <div class="content-placeholder h-4 w-full"></div>
-                            <div class="content-placeholder h-4 w-5/6"></div>
-                            <div class="content-placeholder h-4 w-4/5"></div>
+                            <p>Analiza un gráfico de burndown de Sprint y detecta posibles problemas en el desarrollo. Propón acciones de mejora basadas en los datos.</p>
                         </div>
+                        <form onsubmit="saveExerciseAnswer(event, 'metricas')" class="mb-4">
+                            <label class="block mb-2 font-semibold text-yellow-800">Tu análisis y propuestas:</label>
+                            <textarea id="exercise-metricas" rows="5" class="w-full p-3 border rounded-lg mb-2" placeholder="Escribe aquí tu análisis..."></textarea>
+                            <button type="submit" class="bg-yellow-600 text-white px-6 py-2 rounded-lg hover:bg-yellow-700 transition-colors">Guardar Respuesta</button>
+                            <span id="saved-metricas" class="text-yellow-700 font-semibold ml-3" style="display:none;">¡Respuesta guardada!</span>
+                        </form>
                         <div class="bg-yellow-50 p-4 rounded-lg mb-4">
                             <h5 class="font-semibold text-yellow-800 mb-2">Objetivos:</h5>
-                            <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
-                            </div>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li>Interpretar métricas ágiles.</li>
+                                <li>Identificar cuellos de botella y riesgos.</li>
+                                <li>Proponer mejoras basadas en datos reales.</li>
+                            </ul>
                         </div>
-                        <button class="bg-yellow-600 text-white px-6 py-2 rounded-lg hover:bg-yellow-700 transition-colors">
-                            Comenzar Ejercicio
-                        </button>
                     </div>
                 </div>
             </div>
@@ -652,31 +555,30 @@
                             <h4 class="text-xl font-bold text-red-800">Transformación Ágil Empresarial</h4>
                         </div>
                         <div class="space-y-3 mb-6">
-                            <div class="content-placeholder h-4 w-full"></div>
-                            <div class="content-placeholder h-4 w-5/6"></div>
-                            <div class="content-placeholder h-4 w-4/5"></div>
-                            <div class="content-placeholder h-4 w-full"></div>
+                            <p>Una empresa tradicional decide adoptar metodologías ágiles en todos sus equipos. Analiza los pasos necesarios para la transformación, identifica posibles resistencias y propone estrategias para gestionarlas.</p>
                         </div>
+                        <form onsubmit="saveExerciseAnswer(event, 'transformacion')" class="mb-4">
+                            <label class="block mb-2 font-semibold text-red-800">Tu análisis y propuestas:</label>
+                            <textarea id="exercise-transformacion" rows="5" class="w-full p-3 border rounded-lg mb-2" placeholder="Escribe aquí tu análisis..."></textarea>
+                            <button type="submit" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors">Guardar Respuesta</button>
+                            <span id="saved-transformacion" class="text-red-700 font-semibold ml-3" style="display:none;">¡Respuesta guardada!</span>
+                        </form>
                         <div class="bg-red-50 p-4 rounded-lg mb-6">
                             <h5 class="font-semibold text-red-800 mb-2">Escenario:</h5>
-                            <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
-                                <div class="content-placeholder h-3 w-3/4"></div>
-                            </div>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li>Empresa de desarrollo de software con estructura jerárquica.</li>
+                                <li>Equipos acostumbrados a procesos tradicionales.</li>
+                                <li>Directivos interesados en agilidad y mejora continua.</li>
+                            </ul>
                         </div>
                         <div class="bg-red-50 p-4 rounded-lg mb-4">
                             <h5 class="font-semibold text-red-800 mb-2">Desafíos:</h5>
-                            <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
-                            </div>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li>Resistencia al cambio.</li>
+                                <li>Falta de experiencia en metodologías ágiles.</li>
+                                <li>Comunicación entre áreas.</li>
+                            </ul>
                         </div>
-                        <button class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors">
-                            Analizar Caso
-                        </button>
                     </div>
 
                     <div class="section-card p-8 rounded-xl card-hover exercise-item" data-level="avanzado">
@@ -685,31 +587,30 @@
                             <h4 class="text-xl font-bold text-red-800">Optimización de Procesos</h4>
                         </div>
                         <div class="space-y-3 mb-6">
-                            <div class="content-placeholder h-4 w-full"></div>
-                            <div class="content-placeholder h-4 w-5/6"></div>
-                            <div class="content-placeholder h-4 w-4/5"></div>
-                            <div class="content-placeholder h-4 w-full"></div>
+                            <p>Analiza un proceso de desarrollo de software que presenta retrasos frecuentes. Identifica las causas raíz y propone un plan de mejora utilizando herramientas de calidad y prácticas ágiles.</p>
                         </div>
+                        <form onsubmit="saveExerciseAnswer(event, 'optimizacion')" class="mb-4">
+                            <label class="block mb-2 font-semibold text-red-800">Tu análisis y plan de mejora:</label>
+                            <textarea id="exercise-optimizacion" rows="5" class="w-full p-3 border rounded-lg mb-2" placeholder="Escribe aquí tu propuesta..."></textarea>
+                            <button type="submit" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors">Guardar Respuesta</button>
+                            <span id="saved-optimizacion" class="text-red-700 font-semibold ml-3" style="display:none;">¡Respuesta guardada!</span>
+                        </form>
                         <div class="bg-red-50 p-4 rounded-lg mb-6">
                             <h5 class="font-semibold text-red-800 mb-2">Escenario:</h5>
-                            <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
-                                <div class="content-placeholder h-3 w-3/4"></div>
-                            </div>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li>Proyecto con entregas tardías y baja satisfacción del cliente.</li>
+                                <li>Falta de métricas y retroalimentación.</li>
+                                <li>Equipos con roles poco definidos.</li>
+                            </ul>
                         </div>
                         <div class="bg-red-50 p-4 rounded-lg mb-4">
-                            <h5 class="font-semibold text-red-800 mb-2">Objetivos:</h5>
-                            <div class="space-y-2">
-                                <div class="content-placeholder h-3 w-full"></div>
-                                <div class="content-placeholder h-3 w-4/5"></div>
-                                <div class="content-placeholder h-3 w-5/6"></div>
-                            </div>
+                            <h5 class="font-semibold text-red-800 mb-2">Desafíos:</h5>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li>Identificar causas raíz de los problemas.</li>
+                                <li>Implementar herramientas de mejora continua.</li>
+                                <li>Fomentar la colaboración y comunicación.</li>
+                            </ul>
                         </div>
-                        <button class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors">
-                            Analizar Caso
-                        </button>
                     </div>
                 </div>
             </div>
@@ -782,6 +683,127 @@
     </footer>
 
     <script>
+        // Expansión de glosario en modal central con información extendida
+        const glossaryInfo = {
+            agil: {
+                title: 'Ágil (Agile)',
+                html: `<p class='text-gray-700 mb-2'>Conjunto de metodologías de desarrollo de software que promueven la entrega rápida, la colaboración y la adaptación continua a los cambios.</p>
+                <p class='text-gray-500 text-sm mb-2'>Ejemplo: Scrum y Kanban son metodologías ágiles.</p>
+                <ul class='list-disc pl-5 text-purple-700 mb-2'>
+                    <li>Prioriza la entrega continua de valor y la colaboración con el cliente.</li>
+                    <li>Permite adaptarse rápidamente a los cambios y mejorar la calidad del producto.</li>
+                    <li>Promueve equipos autoorganizados y multifuncionales.</li>
+                    <li>Ejemplo de marcos ágiles: Scrum, Kanban, XP, Lean.</li>
+                </ul>
+                <p class='text-purple-700 mb-2'>Las reuniones diarias, la retroalimentación constante y la mejora continua son pilares fundamentales.</p>`
+            },
+            backlog: {
+                title: 'Backlog',
+                html: `<p class='text-gray-700 mb-2'>Lista priorizada de tareas, historias o requisitos pendientes por realizar en un proyecto ágil.</p>
+                <p class='text-gray-500 text-sm mb-2'>El Product Owner es responsable de mantener el backlog actualizado.</p>
+                <ul class='list-disc pl-5 text-purple-700 mb-2'>
+                    <li>Evoluciona constantemente y es la base para la planificación de sprints y entregas.</li>
+                    <li>Incluye historias de usuario, tareas técnicas y bugs.</li>
+                    <li>Permite priorizar el trabajo según el valor para el cliente.</li>
+                </ul>`
+            },
+            calidad: {
+                title: 'Aseguramiento de Calidad',
+                html: `<p class='text-gray-700 mb-2'>Conjunto de actividades planificadas y sistemáticas implementadas en un sistema de calidad para asegurar que los requisitos de calidad se cumplan.</p>
+                <p class='text-gray-500 text-sm mb-2'>Incluye auditorías, revisiones y procesos de mejora continua.</p>
+                <ul class='list-disc pl-5 text-purple-700 mb-2'>
+                    <li>Es preventivo y busca mejorar los procesos para evitar errores antes de que ocurran.</li>
+                    <li>Incluye capacitación, documentación y auditorías internas.</li>
+                </ul>`
+            },
+            control: {
+                title: 'Control de Calidad',
+                html: `<p class='text-gray-700 mb-2'>Proceso orientado a verificar que los productos o servicios cumplen con los requisitos de calidad establecidos.</p>
+                <p class='text-gray-500 text-sm mb-2'>Incluye inspecciones, pruebas y validaciones.</p>
+                <ul class='list-disc pl-5 text-purple-700 mb-2'>
+                    <li>Incluye pruebas manuales y automáticas, inspecciones y validaciones para asegurar la conformidad del producto.</li>
+                    <li>Es reactivo y se realiza sobre el producto final.</li>
+                </ul>`
+            },
+            ciclo: {
+                title: 'Ciclo de Vida',
+                html: `<p class='text-gray-700 mb-2'>Etapas por las que pasa un producto o proyecto desde su inicio hasta su finalización o retiro.</p>
+                <p class='text-gray-500 text-sm mb-2'>Ejemplo: análisis, diseño, desarrollo, pruebas, implementación y mantenimiento.</p>
+                <ul class='list-disc pl-5 text-purple-700 mb-2'>
+                    <li>El ciclo de vida puede variar según la metodología utilizada.</li>
+                    <li>Busca la mejora continua y la satisfacción del cliente.</li>
+                </ul>`
+            },
+            daily: {
+                title: 'Daily Scrum',
+                html: `<p class='text-gray-700 mb-2'>Reunión diaria breve donde el equipo revisa el progreso, planifica el día y detecta obstáculos.</p>
+                <p class='text-gray-500 text-sm mb-2'>Dura 15 minutos y cada miembro responde tres preguntas clave.</p>
+                <ul class='list-disc pl-5 text-purple-700 mb-2'>
+                    <li>Permite al equipo sincronizarse y detectar problemas rápidamente.</li>
+                    <li>Mejora la comunicación y la eficiencia.</li>
+                </ul>`
+            },
+            kanban: {
+                title: 'Kanban',
+                html: `<p class='text-gray-700 mb-2'>Metodología ágil que utiliza tableros visuales para gestionar el flujo de trabajo y promover la mejora continua.</p>
+                <p class='text-gray-500 text-sm mb-2'>Permite limitar el trabajo en curso y visualizar el estado de cada tarea.</p>
+                <ul class='list-disc pl-5 text-purple-700 mb-2'>
+                    <li>Ayuda a visualizar el trabajo, limitar el WIP y optimizar el flujo.</li>
+                    <li>Se utiliza tanto en desarrollo de software como en manufactura y servicios.</li>
+                    <li>Promueve la mejora continua y la transparencia.</li>
+                </ul>`
+            },
+            sprint: {
+                title: 'Sprint',
+                html: `<p class='text-gray-700 mb-2'>Periodo de tiempo fijo en Scrum donde el equipo trabaja para completar tareas seleccionadas del backlog.</p>
+                <p class='text-gray-500 text-sm mb-2'>Generalmente dura entre 1 y 4 semanas.</p>
+                <ul class='list-disc pl-5 text-purple-700 mb-2'>
+                    <li>Al final de cada sprint se realiza una revisión y retrospectiva para mejorar el proceso y el producto.</li>
+                    <li>Permite entregas incrementales y recibir feedback frecuente.</li>
+                </ul>`
+            },
+            scrum: {
+                title: 'Scrum Master',
+                html: `<p class='text-gray-700 mb-2'>Persona responsable de facilitar el proceso Scrum, eliminar impedimentos y ayudar al equipo a seguir las prácticas ágiles.</p>
+                <p class='text-gray-500 text-sm mb-2'>No es jefe, sino guía y facilitador.</p>
+                <ul class='list-disc pl-5 text-purple-700 mb-2'>
+                    <li>Facilita la autoorganización y la mejora continua.</li>
+                    <li>Es clave para eliminar obstáculos y fomentar la transparencia.</li>
+                    <li>Promueve la colaboración y el aprendizaje en el equipo.</li>
+                </ul>`
+            }
+        };
+
+        document.querySelectorAll('.glossary-term').forEach(card => {
+            card.addEventListener('click', function(e) {
+                e.stopPropagation();
+                let key = card.dataset.glossary;
+                if (!key) {
+                    // fallback por título
+                    key = card.querySelector('h3').textContent.toLowerCase().includes('ágil') ? 'agil'
+                        : card.querySelector('h3').textContent.toLowerCase().includes('backlog') ? 'backlog'
+                        : card.querySelector('h3').textContent.toLowerCase().includes('aseguramiento') ? 'calidad'
+                        : card.querySelector('h3').textContent.toLowerCase().includes('control') ? 'control'
+                        : card.querySelector('h3').textContent.toLowerCase().includes('ciclo') ? 'ciclo'
+                        : card.querySelector('h3').textContent.toLowerCase().includes('daily') ? 'daily'
+                        : card.querySelector('h3').textContent.toLowerCase().includes('kanban') ? 'kanban'
+                        : card.querySelector('h3').textContent.toLowerCase().includes('sprint') ? 'sprint'
+                        : card.querySelector('h3').textContent.toLowerCase().includes('scrum master') ? 'scrum'
+                        : null;
+                }
+                if (!key || !glossaryInfo[key]) return;
+                const modal = document.getElementById('glossary-modal');
+                const modalBg = document.getElementById('glossary-modal-bg');
+                modal.innerHTML = `<button class='glossary-modal-close' onclick='closeGlossaryModal()'>Cerrar</button><h2 class='text-2xl font-bold text-purple-800 mb-4'>${glossaryInfo[key].title}</h2>${glossaryInfo[key].html}`;
+                modal.style.display = 'block';
+                modalBg.style.display = 'block';
+            });
+        });
+
+        window.closeGlossaryModal = function() {
+            document.getElementById('glossary-modal').style.display = 'none';
+            document.getElementById('glossary-modal-bg').style.display = 'none';
+        }
         // Funcionalidad del menú móvil
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
@@ -937,6 +959,28 @@
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
+    </script>
+    <script>
+function saveExerciseAnswer(event, key) {
+    event.preventDefault();
+    var textarea = document.getElementById('exercise-' + key);
+    var value = textarea.value;
+    localStorage.setItem('exercise-' + key, value);
+    document.getElementById('saved-' + key).style.display = 'inline';
+    setTimeout(function() {
+        document.getElementById('saved-' + key).style.display = 'none';
+    }, 2000);
+}
+window.onload = function() {
+    var keys = ['kanban_intermedio', 'metricas'];
+    keys.forEach(function(key) {
+        var saved = localStorage.getItem('exercise-' + key);
+        if (saved) {
+            var textarea = document.getElementById('exercise-' + key);
+            if (textarea) textarea.value = saved;
+        }
+    });
+}
     </script>
     <script>
         (function() {

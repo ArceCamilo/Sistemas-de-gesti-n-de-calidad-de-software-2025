@@ -7,6 +7,15 @@
     <title>Procesos de Desarrollo de Software - Sistemas de gestión de calidad</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="pantalla3.css">
+    <style>
+        .card-hover {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: scale(1.18);
+            z-index: 2;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50">
@@ -39,16 +48,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Menú móvil -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#" onclick="goToHome()" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
-                <a href="#gestion-calidad" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Gestión de Calidad</a>
-                <a href="#procesos" class="bg-orange-600 text-white block px-3 py-2 rounded-md text-base font-medium">Procesos</a>
-                <a href="#metodologias" class="text-gray-600 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Metodologías</a>
-            </div>
-        </div>
     </nav>
 
     <!-- Sección Hero -->
@@ -63,11 +62,14 @@
                     Explora los ciclos de vida, modelos tradicionales y metodologías ágiles que guían el desarrollo de software de calidad.
                 </p>
                 <div class="flex flex-wrap justify-center gap-4">
-                    <button onclick="scrollToSection('sdlc')" class="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors">
+                    <button onclick="scrollToSection('sdlc')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
                         Explorar SDLC
                     </button>
                     <button onclick="scrollToSection('modelos-tradicionales')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
                         Ver Modelos
+                    </button>
+                    <button onclick="scrollToSection('metodologias-agiles')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
+                        Ver Metodologías
                     </button>
                 </div>
             </div>

@@ -1,0 +1,14 @@
+Libros sobre SCRUM:
+•	Clean Code de Robert C. Martin – Guía de buenas prácticas para escribir código limpio y mantenible.
+•	Agile Software Development with Scrum de Ken Schwaber – Libro de referencia para entender Scrum y metodologías ágiles.
+•	Continuous Delivery de Jez Humble y David Farley – Estrategias de integración y entrega continua.
+
+Articulos y tutoriales:
+https://scrumguides.org/ - explicacion detallada del marco de trabajo de scrum
+https://businessmap.io/kanban-resources/getting-started/what-is-kanban - recursos y guias sobre la metodologia Kanban
+https://www.softwaretestinghelp.com/ - Tutoriales y articulos sobre aseguramiento y control de calidad
+
+Organizaciones y estandares
+https://www.iso.org/home.html - normas internacionales, incluyendo ISO 9001 para gestion de calidad
+https://www.scrumalliance.org/ - comunidad y certificaciones oficiales de scrum
+https://agilealliance.org/ - Recursos, conferencias y articulos sobre metodologias agiles.
