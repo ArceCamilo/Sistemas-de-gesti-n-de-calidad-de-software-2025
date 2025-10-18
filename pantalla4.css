@@ -59,3 +59,26 @@ body {
 .kanban-gradient {
     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
 }
+
+.demo-figure {
+    width: 100%;
+    height: auto;
+    max-height: 640px; /* increased for better legibility on desktop */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(2,6,23,0.08);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+@media (max-width: 1024px) {
+    .demo-figure {
+        max-height: 480px;
+    }
+}
+
+@media (max-width: 640px) {
+    .demo-figure {
+        max-height: 360px;
+        border-radius: 10px;
+    }
+}
