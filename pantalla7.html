@@ -8,6 +8,32 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="pantalla7.css">
+    <style>
+        /* Visual for selected methodology cards */
+        .methodology-card.selected {
+            border: 2px solid #2563eb; /* blue-600 */
+            box-shadow: 0 10px 30px rgba(37,99,235,0.12);
+            transform: translateY(-6px);
+        }
+
+        .methodology-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .badge-iso { background:#eef2ff; color:#3730a3; }
+        .badge-lean { background:#ecfdf5; color:#065f46; }
+        .badge-six-sigma { background:#f0f9ff; color:#0c4a6e; }
+        .badge-kaizen { background:#fff7ed; color:#92400e; }
+        .badge-tqm { background:#fff1f2; color:#7f1d1d; }
+        .badge-pdca { background:#f8fafc; color:#334155; }
+
+        /* Small responsive tweaks for comparison table */
+        .comparison-table table th, .comparison-table table td { vertical-align: top; padding: 12px; }
+        .comparison-table table td { border-top: 1px solid rgba(0,0,0,0.06); }
+    </style>
 </head>
 
 <body class="bg-gray-50">
@@ -41,19 +67,6 @@
             </div>
         </div>
 
-        <!-- Menú móvil -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#" onclick="goToHome()" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
-                <a href="#gestion-calidad" class="text-gray-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Gestión de Calidad</a>
-                <a href="#procesos" class="text-gray-600 hover:text-orange-600 block px-3 py-2 rounded-md text-base font-medium">Procesos</a>
-                <a href="#metodologias" class="text-gray-600 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Metodologías</a>
-                <a href="#recursos" class="text-gray-600 hover:text-purple-600 block px-3 py-2 rounded-md text-base font-medium">Recursos</a>
-                <a href="#herramientas" class="bg-blue-600 text-white block px-3 py-2 rounded-md text-base font-medium">Herramientas</a>
-            </div>
-        </div>
-    </nav>
-
     <!-- Sección Hero -->
     <section id="herramientas" class="hero-gradient text-white py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +79,7 @@
                     Descubre las mejores metodologías para tu proyecto con nuestras herramientas especializadas
                 </p>
                 <div class="flex flex-wrap justify-center gap-4">
-                    <button onclick="showTool('comparador')" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                    <button onclick="showTool('comparador')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
                         Comparador de Metodologías
                     </button>
                     <button onclick="showTool('encuesta')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
@@ -164,6 +177,66 @@
                             <h4 class="text-xl font-bold text-blue-800 mb-2">PDCA</h4>
                             <span class="methodology-badge badge-pdca">Ciclo</span>
                             <p class="text-gray-600 text-sm mt-3">Ciclo Planificar-Hacer-Verificar-Actuar</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Waterfall / Cascada -->
+                    <div class="methodology-card p-6 rounded-xl" onclick="toggleMethodology('cascada')" data-methodology="cascada">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">🏗️</div>
+                            <h4 class="text-xl font-bold text-blue-800 mb-2">Cascada</h4>
+                            <span class="methodology-badge" style="background:#f1f5f9;color:#0f172a">Secuencial</span>
+                            <p class="text-gray-600 text-sm mt-3">Modelo secuencial por fases: requisitos, diseño, implementación, verificación, mantenimiento</p>
+                        </div>
+                    </div>
+
+                    <!-- Incremental -->
+                    <div class="methodology-card p-6 rounded-xl" onclick="toggleMethodology('incremental')" data-methodology="incremental">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">🧩</div>
+                            <h4 class="text-xl font-bold text-blue-800 mb-2">Incremental</h4>
+                            <span class="methodology-badge" style="background:#eef2ff;color:#1e40af">Iterativo</span>
+                            <p class="text-gray-600 text-sm mt-3">Desarrollo en entregas incrementales que se integran progresivamente</p>
+                        </div>
+                    </div>
+
+                    <!-- Modelo en V -->
+                    <div class="methodology-card p-6 rounded-xl" onclick="toggleMethodology('vmodel')" data-methodology="vmodel">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">📐</div>
+                            <h4 class="text-xl font-bold text-blue-800 mb-2">Modelo en V</h4>
+                            <span class="methodology-badge" style="background:#fff7ed;color:#7c2d12">Validación</span>
+                            <p class="text-gray-600 text-sm mt-3">Extensión del cascada con fases de verificación y validación en espejo</p>
+                        </div>
+                    </div>
+
+                    <!-- SCRUM -->
+                    <div class="methodology-card p-6 rounded-xl" onclick="toggleMethodology('scrum')" data-methodology="scrum">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">🏃‍♂️</div>
+                            <h4 class="text-xl font-bold text-blue-800 mb-2">SCRUM</h4>
+                            <span class="methodology-badge" style="background:#ecfeff;color:#065f46">Ágil</span>
+                            <p class="text-gray-600 text-sm mt-3">Marco ágil basado en sprints, roles y eventos para entregar valor rápido</p>
+                        </div>
+                    </div>
+
+                    <!-- Kanban -->
+                    <div class="methodology-card p-6 rounded-xl" onclick="toggleMethodology('kanban')" data-methodology="kanban">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">📋</div>
+                            <h4 class="text-xl font-bold text-blue-800 mb-2">Kanban</h4>
+                            <span class="methodology-badge" style="background:#f0fdf4;color:#065f46">Flujo</span>
+                            <p class="text-gray-600 text-sm mt-3">Sistema visual de gestión del flujo de trabajo mediante tableros</p>
+                        </div>
+                    </div>
+
+                    <!-- eXtreme Programming (XP) -->
+                    <div class="methodology-card p-6 rounded-xl" onclick="toggleMethodology('xp')" data-methodology="xp">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">💻</div>
+                            <h4 class="text-xl font-bold text-blue-800 mb-2">XP</h4>
+                            <span class="methodology-badge" style="background:#fff1f2;color:#7f1d1d">Prácticas</span>
+                            <p class="text-gray-600 text-sm mt-3">Prácticas de ingeniería ágil: TDD, pair programming y entregas frecuentes</p>
                         </div>
                     </div>
                 </div>
@@ -392,12 +465,338 @@
                     </div>
                 </div>
                 <!-- ...continúa el resto de preguntas y secciones tal como en tu código original... -->
+                <!-- Pregunta 5 -->
+                <div class="survey-card p-8 rounded-xl mb-8 question-card hidden" id="question-5">
+                    <h3 class="text-xl font-bold text-blue-800 mb-6">5. ¿Cuánto tiempo tienes para implementar mejoras?</h3>
+                    <div class="space-y-3">
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(5, 'corto', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">⏱️</div>
+                                <div>
+                                    <h4 class="font-semibold">Corto (menos de 3 meses)</h4>
+                                    <p class="text-gray-600 text-sm">Necesitas resultados rápidos</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(5, 'medio', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">📆</div>
+                                <div>
+                                    <h4 class="font-semibold">Medio (3-9 meses)</h4>
+                                    <p class="text-gray-600 text-sm">Plazo razonable para iterar</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(5, 'largo', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">📅</div>
+                                <div>
+                                    <h4 class="font-semibold">Largo (más de 9 meses)</h4>
+                                    <p class="text-gray-600 text-sm">Proyecto con tiempo para implementación completa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 6 -->
+                <div class="survey-card p-8 rounded-xl mb-8 question-card hidden" id="question-6">
+                    <h3 class="text-xl font-bold text-blue-800 mb-6">6. ¿Prefieres cambios graduales o grandes entregas?</h3>
+                    <div class="space-y-3">
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(6, 'gradual', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">🌱</div>
+                                <div>
+                                    <h4 class="font-semibold">Graduales</h4>
+                                    <p class="text-gray-600 text-sm">Pequeñas mejoras continuas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(6, 'entrega', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">🚚</div>
+                                <div>
+                                    <h4 class="font-semibold">Grandes entregas</h4>
+                                    <p class="text-gray-600 text-sm">Planificación por fases y entregas completas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(6, 'mezcla', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">🔀</div>
+                                <div>
+                                    <h4 class="font-semibold">Mixto</h4>
+                                    <p class="text-gray-600 text-sm">Combinación de ambos enfoques</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 7 -->
+                <div class="survey-card p-8 rounded-xl mb-8 question-card hidden" id="question-7">
+                    <h3 class="text-xl font-bold text-blue-800 mb-6">7. ¿Tu equipo tiene experiencia con metodologías ágiles?</h3>
+                    <div class="space-y-3">
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(7, 'si', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">✅</div>
+                                <div>
+                                    <h4 class="font-semibold">Sí</h4>
+                                    <p class="text-gray-600 text-sm">El equipo está familiarizado con prácticas ágiles</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(7, 'parcial', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">➗</div>
+                                <div>
+                                    <h4 class="font-semibold">Parcialmente</h4>
+                                    <p class="text-gray-600 text-sm">Algunos miembros conocen prácticas ágiles</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(7, 'no', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">❌</div>
+                                <div>
+                                    <h4 class="font-semibold">No</h4>
+                                    <p class="text-gray-600 text-sm">Equipo sin experiencia ágil</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 8 -->
+                <div class="survey-card p-8 rounded-xl mb-8 question-card hidden" id="question-8">
+                    <h3 class="text-xl font-bold text-blue-800 mb-6">8. ¿Necesitas priorizar la reducción de defectos o la velocidad de entrega?</h3>
+                    <div class="space-y-3">
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(8, 'defectos', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">🔎</div>
+                                <div>
+                                    <h4 class="font-semibold">Reducción de defectos</h4>
+                                    <p class="text-gray-600 text-sm">Calidad y estabilidad por encima de todo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(8, 'velocidad', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">⚡</div>
+                                <div>
+                                    <h4 class="font-semibold">Velocidad de entrega</h4>
+                                    <p class="text-gray-600 text-sm">Entregar características rápidamente</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="survey-option p-4 rounded-lg border" onclick="selectOption(8, 'equilibrio', this)">
+                            <div class="flex items-center">
+                                <div class="text-2xl mr-4">⚖️</div>
+                                <div>
+                                    <h4 class="font-semibold">Equilibrio</h4>
+                                    <p class="text-gray-600 text-sm">Buscar balance entre calidad y ritmo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resultado de la encuesta -->
+                <div id="survey-result" class="survey-card p-8 rounded-xl mb-8 hidden">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Recomendación</h3>
+                    <p id="result-summary" class="text-gray-700 mb-4"></p>
+                    <ul id="recommendations-list" class="text-gray-700 mb-6"></ul>
+                    <div class="flex gap-4">
+                        <button onclick="restartSurvey()" class="bg-blue-600 text-white px-6 py-2 rounded-lg">Reiniciar encuesta</button>
+                        <button onclick="showTool('comparador')" class="border border-blue-600 text-blue-600 px-6 py-2 rounded-lg">Ir al comparador</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- (Resto del HTML original: secciones, footer y scripts) -->
     <!-- Pega aquí todo el resto de tu HTML sin cambios, incluyendo <script> con tus funciones -->
+    <script>
+        // Data model for methodologies (expandable)
+        const methodologies = {
+            iso9001: {
+                name: 'ISO 9001',
+                type: 'Certificación',
+                purpose: 'Establecer un sistema de gestión de calidad conforme a estándares internacionales',
+                bestFor: 'Organizaciones que buscan certificación y madurez en procesos',
+                complexity: 'Alta',
+                cost: 'Medio-Alto'
+            },
+            lean: {
+                name: 'Lean Manufacturing',
+                type: 'Eficiencia',
+                purpose: 'Eliminar desperdicios y optimizar flujo',
+                bestFor: 'Procesos de producción y equipos que buscan mejorar eficiencia',
+                complexity: 'Media',
+                cost: 'Bajo-Medio'
+            },
+            sixsigma: {
+                name: 'Six Sigma',
+                type: 'Estadística',
+                purpose: 'Reducir defectos mediante análisis estadístico',
+                bestFor: 'Procesos con problemas de variación y defectos',
+                complexity: 'Alta',
+                cost: 'Medio-Alto'
+            },
+            kaizen: {
+                name: 'Kaizen',
+                type: 'Mejora Continua',
+                purpose: 'Cultura de mejora incremental',
+                bestFor: 'Equipos que desean mejora continua con bajo coste',
+                complexity: 'Baja-Media',
+                cost: 'Bajo'
+            },
+            tqm: {
+                name: 'TQM',
+                type: 'Gestión Total',
+                purpose: 'Gestión integrada de la calidad en toda la organización',
+                bestFor: 'Organizaciones que buscan enfoque integral en calidad',
+                complexity: 'Alta',
+                cost: 'Alto'
+            },
+            pdca: {
+                name: 'PDCA',
+                type: 'Ciclo',
+                purpose: 'Ciclo iterativo de mejora (Plan-Do-Check-Act)',
+                bestFor: 'Cualquier equipo que quiera un proceso de mejora iterativa',
+                complexity: 'Baja',
+                cost: 'Bajo'
+            }
+            ,
+            cascada: {
+                name: 'Cascada',
+                type: 'Secuencial',
+                purpose: 'Modelo por fases con flujo lineal desde requisitos hasta mantenimiento',
+                bestFor: 'Proyectos con requisitos estables y entregables definidos',
+                complexity: 'Media',
+                cost: 'Medio'
+            },
+            incremental: {
+                name: 'Incremental',
+                type: 'Iterativo',
+                purpose: 'Entrega por incrementos que se integran progresivamente',
+                bestFor: 'Proyectos que necesitan entregas tempranas y evolución por etapas',
+                complexity: 'Media',
+                cost: 'Medio'
+            },
+            vmodel: {
+                name: 'Modelo en V',
+                type: 'Verificación/Validación',
+                purpose: 'Enfocado en pruebas que reflejan cada fase de desarrollo',
+                bestFor: 'Sistemas críticos donde las pruebas deben planificarse desde el inicio',
+                complexity: 'Alta',
+                cost: 'Alto'
+            },
+            scrum: {
+                name: 'SCRUM',
+                type: 'Ágil',
+                purpose: 'Marco ágil basado en sprints para entregar valor frecuentemente',
+                bestFor: 'Equipos que necesitan iteraciones cortas y retroalimentación continua',
+                complexity: 'Media',
+                cost: 'Variable'
+            },
+            kanban: {
+                name: 'Kanban',
+                type: 'Flujo/Visual',
+                purpose: 'Visualizar y optimizar el flujo de trabajo con límites de trabajo en curso',
+                bestFor: 'Equipos que buscan mejorar el flujo sin cambiar roles ni sprints',
+                complexity: 'Baja-Media',
+                cost: 'Bajo'
+            },
+            xp: {
+                name: 'XP',
+                type: 'Ágil/Prácticas',
+                purpose: 'Conjunto de prácticas de ingeniería para mejorar calidad y velocidad',
+                bestFor: 'Equipos de desarrollo de software con alta colaboración técnica',
+                complexity: 'Media',
+                cost: 'Variable'
+            }
+        };
+
+        // Selection state
+        const selected = new Set();
+
+        function toggleMethodology(key) {
+            const el = document.querySelector(`.methodology-card[data-methodology="${key}"]`);
+            if (!el) return;
+            if (selected.has(key)) {
+                selected.delete(key);
+                el.classList.remove('selected');
+            } else {
+                selected.add(key);
+                el.classList.add('selected');
+            }
+        }
+
+        function clearSelection() {
+            selected.clear();
+            document.querySelectorAll('.methodology-card.selected').forEach(el => el.classList.remove('selected'));
+            document.getElementById('comparison-results').classList.add('hidden');
+            // clear table
+            const thead = document.querySelector('#comparison-table thead tr');
+            thead.innerHTML = '<th class="px-6 py-4 text-left font-semibold">Característica</th>';
+            document.getElementById('comparison-body').innerHTML = '';
+        }
+
+        function compareMethodologies() {
+            if (selected.size < 2) {
+                alert('Selecciona al menos 2 metodologías para comparar.');
+                return;
+            }
+
+            const keys = Array.from(selected);
+            // Build table header
+            const theadRow = document.querySelector('#comparison-table thead tr');
+            theadRow.innerHTML = '<th class="px-6 py-4 text-left font-semibold">Característica</th>' + keys.map(k => `<th class="px-6 py-4 text-left font-semibold">${methodologies[k].name}</th>`).join('');
+
+            // Features to compare
+            const features = [
+                { id: 'type', label: 'Tipo' },
+                { id: 'purpose', label: 'Propósito' },
+                { id: 'bestFor', label: 'Ideal para' },
+                { id: 'complexity', label: 'Complejidad' },
+                { id: 'cost', label: 'Coste aproximado' }
+            ];
+
+            const tbody = document.getElementById('comparison-body');
+            tbody.innerHTML = '';
+            features.forEach(feature => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td class="px-6 py-4 font-semibold bg-gray-50">${feature.label}</td>` + keys.map(k => `<td class="px-6 py-4">${methodologies[k][feature.id]}</td>`).join('');
+                tbody.appendChild(tr);
+            });
+
+            document.getElementById('comparison-results').classList.remove('hidden');
+            // scroll to results
+            document.getElementById('comparison-results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Tab/tool switcher
+        function showTool(tool) {
+            document.getElementById('tool-comparador').classList.toggle('hidden', tool !== 'comparador');
+            document.getElementById('tool-encuesta').classList.toggle('hidden', tool !== 'encuesta');
+            document.getElementById('tab-comparador').classList.toggle('active', tool === 'comparador');
+            document.getElementById('tab-encuesta').classList.toggle('active', tool === 'encuesta');
+        }
+
+        // Simple accessibility: keyboard selection
+        document.querySelectorAll('.methodology-card').forEach(card => {
+            card.setAttribute('tabindex', '0');
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    const key = card.getAttribute('data-methodology');
+                    toggleMethodology(key);
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
     <script>
         // Funcionalidad del menú móvil
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
@@ -417,57 +816,6 @@
 
         function goToHome() {
             alert('Navegando de vuelta a la página de inicio...');
-        }
-
-        // Tabs herramientas
-        function showTool(tool) {
-            const comp = document.getElementById('tool-comparador');
-            const enc = document.getElementById('tool-encuesta');
-            const tComp = document.getElementById('tab-comparador');
-            const tEnc = document.getElementById('tab-encuesta');
-            if (tool === 'comparador') {
-                comp.classList.remove('hidden');
-                enc.classList.add('hidden');
-                tComp.classList.add('active');
-                tEnc.classList.remove('active');
-            } else {
-                enc.classList.remove('hidden');
-                comp.classList.add('hidden');
-                tEnc.classList.add('active');
-                tComp.classList.remove('active');
-            }
-        }
-
-        // Comparador (placeholders mínimos para que funcione el UI)
-        const selected = new Set();
-
-        function toggleMethodology(key) {
-            const card = document.querySelector(`.methodology-card[data-methodology="${key}"]`);
-            if (selected.has(key)) {
-                selected.delete(key);
-                card.classList.remove('selected');
-            } else {
-                selected.add(key);
-                card.classList.add('selected');
-            }
-        }
-
-        function clearSelection() {
-            selected.forEach(k => {
-                const c = document.querySelector(`.methodology-card[data-methodology="${k}"]`);
-                if (c) c.classList.remove('selected');
-            });
-            selected.clear();
-            document.getElementById('comparison-results').classList.add('hidden');
-        }
-
-        function compareMethodologies() {
-            if (selected.size < 2) {
-                alert('Selecciona al menos dos metodologías para comparar.');
-                return;
-            }
-            // aquí iría tu lógica de comparación y llenado de la tabla
-            document.getElementById('comparison-results').classList.remove('hidden');
         }
 
         // Encuesta
@@ -492,7 +840,7 @@
             // marcar visual
             document.querySelectorAll(`#question-${q} .survey-option`).forEach(o => o.classList.remove('selected'));
             el.classList.add('selected');
-            // avanzar
+            // avanzar o finalizar
             const curr = document.getElementById(`question-${q}`);
             const next = document.getElementById(`question-${q+1}`);
             if (next) {
@@ -500,15 +848,89 @@
                 next.classList.remove('hidden');
                 currentQ = q + 1;
                 setProgress(currentQ);
-                next.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            } else {
-                setProgress(q + 1);
-                // aquí podrías calcular y mostrar recomendación
-                alert('¡Encuesta completada! (demo)');
+                next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                return;
             }
+
+            // Encuesta completa -> calcular recomendación
+            setProgress(9);
+            const result = computeRecommendation(answers);
+            showSurveyResult(result);
+        }
+
+        function computeRecommendation(ans) {
+            // Lightweight scoring: map answers to methodology candidates
+            const scores = {};
+            function addScore(key, pts=1){ scores[key]=(scores[key]||0)+pts; }
+
+            // size
+            if (ans[1] === 'pequeña') { addScore('kanban',2); addScore('xp',1); }
+            if (ans[1] === 'mediana') { addScore('scrum',2); addScore('lean',1); }
+            if (ans[1] === 'grande') { addScore('iso9001',2); addScore('tqm',1); }
+
+            // sector
+            if (ans[2] === 'manufactura') { addScore('lean',2); addScore('sixsigma',1); }
+            if (ans[2] === 'tecnologia') { addScore('scrum',2); addScore('xp',2); }
+            if (ans[2] === 'servicios') { addScore('kanban',1); addScore('pdca',1); }
+            if (ans[2] === 'salud') { addScore('vmodel',2); addScore('iso9001',1); }
+
+            // objective
+            if (ans[3] === 'certificacion') { addScore('iso9001',3); addScore('tqm',1); }
+            if (ans[3] === 'eficiencia') { addScore('lean',2); addScore('kanban',1); }
+            if (ans[3] === 'defectos') { addScore('sixsigma',3); addScore('vmodel',1); }
+            if (ans[3] === 'cultura') { addScore('kaizen',2); addScore('pdca',1); }
+
+            // presupuesto
+            if (ans[4] === 'bajo') { addScore('kanban',2); addScore('kaizen',1); }
+            if (ans[4] === 'medio') { addScore('scrum',1); addScore('lean',1); }
+            if (ans[4] === 'alto') { addScore('iso9001',1); addScore('sixsigma',1); }
+
+            // time
+            if (ans[5] === 'corto') { addScore('kanban',2); addScore('scrum',1); }
+            if (ans[5] === 'medio') { addScore('scrum',2); addScore('incremental',1); }
+            if (ans[5] === 'largo') { addScore('cascada',1); addScore('vmodel',1); }
+
+            // changes
+            if (ans[6] === 'gradual') { addScore('kaizen',2); addScore('kanban',1); }
+            if (ans[6] === 'entrega') { addScore('cascada',1); addScore('scrum',1); }
+            if (ans[6] === 'mezcla') { addScore('incremental',2); addScore('scrum',1); }
+
+            // experiencia agile
+            if (ans[7] === 'si') { addScore('scrum',2); addScore('xp',1); }
+            if (ans[7] === 'parcial') { addScore('kanban',1); addScore('scrum',1); }
+            if (ans[7] === 'no') { addScore('cascada',1); addScore('pdca',1); }
+
+            // priority
+            if (ans[8] === 'defectos') { addScore('sixsigma',2); addScore('vmodel',1); }
+            if (ans[8] === 'velocidad') { addScore('scrum',2); addScore('xp',1); }
+            if (ans[8] === 'equilibrio') { addScore('scrum',1); addScore('kanban',1); addScore('lean',1); }
+
+            // produce sorted list of top matches
+            const sorted = Object.keys(scores).sort((a,b)=>scores[b]-scores[a]);
+            return { scores, sorted };
+        }
+
+        function showSurveyResult(result){
+            const summaryEl = document.getElementById('result-summary');
+            const listEl = document.getElementById('recommendations-list');
+            const comp = result.sorted.map(k => `${methodologies[k]?.name || k} (${result.scores[k]} pts)`);
+            summaryEl.textContent = 'Metodologías recomendadas según tus respuestas:';
+            listEl.innerHTML = comp.slice(0,5).map(s => `<li>• ${s}</li>`).join('');
+            document.getElementById('survey-result').classList.remove('hidden');
+            // hide any questions
+            document.querySelectorAll('.question-card').forEach(q => q.classList.add('hidden'));
+            document.getElementById('survey-result').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function restartSurvey(){
+            // reset state
+            for (let k in answers) delete answers[k];
+            currentQ = 1;
+            document.querySelectorAll('.survey-option').forEach(o => o.classList.remove('selected'));
+            document.getElementById('survey-result').classList.add('hidden');
+            document.getElementById('question-1').classList.remove('hidden');
+            setProgress(1);
+            document.getElementById('question-1').scrollIntoView({ behavior: 'smooth' });
         }
         setProgress(currentQ);
 
